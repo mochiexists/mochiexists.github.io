@@ -1,0 +1,11 @@
+# Source files (keep locally, don't publish)
+*.psd
+*.pptx
+*.ai
+
+# macOS
+.DS_Store
+
+# Editor
+*.swp
+*~
