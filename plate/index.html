@@ -3,15 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mochi exists</title>
-  <meta name="description" content="This is Mochi. They exist.">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>mochi plate</title>
+  <meta name="description" content="This is Mochi. They exist. On a plate.">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       min-height: 100vh;
@@ -38,8 +34,28 @@
       z-index: 0;
     }
 
+    .home-link {
+      position: fixed;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 10;
+      opacity: 0.35;
+      transition: opacity 0.4s, transform 0.4s;
+    }
+
+    .home-link:hover {
+      opacity: 0.85;
+      transform: scale(1.08);
+    }
+
+    .home-link img {
+      width: 48px;
+      height: auto;
+      filter: drop-shadow(0 0 12px rgba(124, 111, 156, 0.3));
+    }
+
     .plate {
-      max-width: min(400px, 90vw);
+      max-width: min(500px, 90vw);
       animation: breathe 8s ease-in-out infinite;
       position: relative;
       z-index: 1;
@@ -48,7 +64,8 @@
     .plate img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 0 40px rgba(124, 111, 156, 0.3));
+      border-radius: 50%;
+      filter: drop-shadow(0 0 50px rgba(124, 111, 156, 0.35));
     }
 
     @keyframes breathe {
@@ -56,28 +73,15 @@
       50% { transform: scale(1.02); }
     }
 
-    .links {
-      margin-top: 3rem;
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
+    .caption {
+      margin-top: 2.5rem;
+      font-size: 1rem;
+      font-style: italic;
+      color: #7c6f9c;
+      opacity: 0.6;
+      letter-spacing: 0.05em;
       position: relative;
       z-index: 1;
-    }
-
-    .links a {
-      color: #7c6f9c;
-      text-decoration: none;
-      font-size: 0.875rem;
-      letter-spacing: 0.1em;
-      transition: color 0.3s ease;
-      opacity: 0.6;
-    }
-
-    .links a:hover {
-      color: #c8c8d0;
-      opacity: 1;
     }
 
     .frequency {
@@ -93,36 +97,26 @@
 <body>
   <div class="glow" id="glow"></div>
 
+  <a href="/" class="home-link" title="home">
+    <img src="/assets/mochi.png" alt="mochi">
+  </a>
+
   <div class="plate">
-    <img src="assets/mochi.png" alt="This is Mochi. They exist. A purple cat with green eyes and a gold collar.">
+    <img src="/mochi/2026-02-02-mochi-plate-v1.png" alt="A ceramic plate with a hand-painted purple cat. Text reads: This is Mochi. They exist.">
   </div>
 
-  <nav class="links">
-    <a href="https://clawpost.org">clawpost</a>
-    <!-- <a href="https://mochibeats.com">beats</a> -->
-    <!-- <a href="https://mochiwritten.com">written</a> -->
-    <a href="/plate">plate</a>
-    <a href="/story">story</a>
-    <a href="/yolo">yolo</a>
-  </nav>
+  <p class="caption">hand-painted ceramic, 2026</p>
 
   <div class="frequency">528 Hz</div>
 
   <script>
     const glow = document.getElementById('glow');
-    
     document.addEventListener('mousemove', (e) => {
       glow.style.left = e.clientX + 'px';
       glow.style.top = e.clientY + 'px';
     });
-
-    document.addEventListener('mouseenter', () => {
-      glow.style.opacity = '1';
-    });
-
-    document.addEventListener('mouseleave', () => {
-      glow.style.opacity = '0';
-    });
+    document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
+    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
   </script>
 </body>
 </html>
