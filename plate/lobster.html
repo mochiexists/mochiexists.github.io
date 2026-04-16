@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mochi plate</title>
-  <meta name="description" content="Hand-painted ceramic plate. This is Mochi. They exist.">
+  <title>lobster plate</title>
+  <meta name="description" content="The World Is Your Lobster. Hand-decorated vintage bone china.">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,7 +27,7 @@
       width: 400px;
       height: 400px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(124, 111, 156, 0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(156, 111, 111, 0.15) 0%, transparent 70%);
       pointer-events: none;
       transform: translate(-50%, -50%);
       transition: opacity 0.3s ease;
@@ -64,7 +64,7 @@
 
     .plate-image {
       width: 100%;
-      max-width: 320px;
+      max-width: 380px;
       display: block;
       margin: 0 auto 2.5rem;
       animation: breathe 8s ease-in-out infinite;
@@ -74,7 +74,7 @@
       width: 100%;
       height: auto;
       border-radius: 0;
-      filter: drop-shadow(0 0 40px rgba(124, 111, 156, 0.3));
+      filter: drop-shadow(0 0 40px rgba(156, 111, 111, 0.3));
     }
 
     @keyframes breathe {
@@ -95,7 +95,7 @@
 
     .details .subtitle {
       font-style: italic;
-      color: #7c6f9c;
+      color: #9c7c6f;
       opacity: 0.6;
       font-size: 1rem;
       margin-bottom: 2rem;
@@ -107,7 +107,14 @@
       line-height: 1.7;
       color: #9999a5;
       max-width: 420px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 1.2rem;
+    }
+
+    .specs {
+      font-size: 0.82rem;
+      color: #7c7c88;
+      font-style: italic;
+      margin-bottom: 2rem;
     }
 
     .price {
@@ -121,17 +128,16 @@
       display: block;
       font-size: 0.78rem;
       font-style: italic;
-      color: #7c6f9c;
+      color: #9c7c6f;
       opacity: 0.5;
       margin-top: 0.3rem;
     }
 
-    /* ── Buy button ── */
     .buy-btn {
       display: inline-block;
       padding: 0.85rem 2.5rem;
-      background: rgba(124, 111, 156, 0.12);
-      border: 1px solid rgba(124, 111, 156, 0.25);
+      background: rgba(156, 111, 111, 0.12);
+      border: 1px solid rgba(156, 111, 111, 0.25);
       border-radius: 10px;
       color: #c8c8d0;
       font-family: 'Georgia', serif;
@@ -143,9 +149,9 @@
     }
 
     .buy-btn:hover {
-      background: rgba(124, 111, 156, 0.2);
-      border-color: rgba(124, 111, 156, 0.45);
-      box-shadow: 0 0 30px rgba(124, 111, 156, 0.15);
+      background: rgba(156, 111, 111, 0.2);
+      border-color: rgba(156, 111, 111, 0.45);
+      box-shadow: 0 0 30px rgba(156, 111, 111, 0.15);
       transform: translateY(-1px);
     }
 
@@ -153,7 +159,6 @@
       transform: translateY(0);
     }
 
-    /* Coming soon state — remove this class when Stripe link is ready */
     .buy-btn.coming-soon {
       opacity: 0.4;
       cursor: default;
@@ -164,14 +169,14 @@
       margin-top: 1.5rem;
       font-size: 0.8rem;
       font-style: italic;
-      color: #7c6f9c;
+      color: #9c7c6f;
       opacity: 0.35;
     }
 
     .divider {
       width: 40px;
       height: 1px;
-      background: rgba(124, 111, 156, 0.15);
+      background: rgba(156, 111, 111, 0.15);
       margin: 2.5rem auto 1.5rem;
     }
 
@@ -186,7 +191,7 @@
       margin: 0 auto 2rem;
     }
 
-    .also-link {
+    .back-link {
       display: block;
       text-align: center;
       font-size: 0.82rem;
@@ -197,7 +202,7 @@
       transition: opacity 0.3s, color 0.3s;
     }
 
-    .also-link:hover {
+    .back-link:hover {
       opacity: 1;
       color: #c8c8d0;
     }
@@ -213,7 +218,7 @@
 
     @media (max-width: 500px) {
       .details h1 { font-size: 1.4rem; }
-      .plate-image { max-width: 300px; }
+      .plate-image { max-width: 280px; }
     }
   </style>
 </head>
@@ -226,42 +231,43 @@
 
   <div class="product">
     <div class="plate-image">
-      <img src="/mochi/2026-02-02-mochi-plate-v1.png" alt="A ceramic plate with a hand-painted purple cat. Text reads: This is Mochi. They exist.">
+      <img src="/assets/lobster-plate.png" alt="A vintage bone china plate with a lobster print. Text reads: The World Is Your Lobster.">
     </div>
 
     <div class="details">
-      <h1>the mochi plate</h1>
-      <p class="subtitle">hand-painted ceramic, 2026</p>
+      <h1>the lobster plate</h1>
+      <p class="subtitle">vintage bone china, hand-decorated</p>
 
       <p class="description">
-        Each plate is hand-painted on ceramic and kiln-fired.
-        No two are exactly alike. Mochi sits in the center,
-        existing, as they do.
+        "The world is your lobster." A vintage lobster print applied to a
+        blue and gold-edged bone china plate. Each piece is handcrafted
+        by Stokes Croft China in Bristol &mdash; no two are exactly alike.
       </p>
 
+      <p class="specs">27cm &middot; fine bone china &middot; dishwasher safe &middot; food safe</p>
+
       <p class="price">
-        $45
+        &pound;35
         <span class="note">+ shipping</span>
       </p>
 
       <!--
         TO ACTIVATE: Replace the href below with your Stripe Payment Link
         and remove the "coming-soon" class.
-
-        Example: href="https://buy.stripe.com/your_link_here"
       -->
       <a href="#" class="buy-btn coming-soon">coming soon</a>
       <!-- <a href="https://buy.stripe.com/YOUR_LINK" class="buy-btn">get one</a> -->
 
-      <p class="shipping-note">ships worldwide from the UK</p>
+      <p class="shipping-note">ships from Bristol, UK</p>
     </div>
 
     <div class="divider"></div>
 
     <p class="footer-note">
-      Each plate is made by hand. Allow 2&ndash;3 weeks for painting and shipping.
+      Made to order. Allow 3&ndash;5 working days, up to 3 weeks during busy periods.
     </p>
-    <a href="/plate/lobster" class="also-link">also: the lobster plate &rarr;</a>
+
+    <a href="/plate" class="back-link">&larr; back to the mochi plate</a>
   </div>
 
   <div class="frequency">528 Hz</div>
