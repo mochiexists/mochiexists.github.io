@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mochi plate</title>
-  <meta name="description" content="This is Mochi. They exist. On a plate.">
+  <meta name="description" content="Hand-painted ceramic plate. This is Mochi. They exist.">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { overflow-x: hidden; }
 
     body {
       min-height: 100vh;
@@ -15,11 +17,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       font-family: 'Georgia', serif;
       color: #c8c8d0;
-      padding: 2rem;
-      overflow: hidden;
+      padding: 3rem 2rem;
     }
 
     .glow {
@@ -54,14 +54,23 @@
       filter: drop-shadow(0 0 12px rgba(124, 111, 156, 0.3));
     }
 
-    .plate {
-      max-width: min(500px, 90vw);
-      animation: breathe 8s ease-in-out infinite;
+    .product {
+      max-width: 580px;
+      width: 100%;
+      margin: auto 0;
       position: relative;
       z-index: 1;
     }
 
-    .plate img {
+    .plate-image {
+      width: 100%;
+      max-width: 420px;
+      display: block;
+      margin: 0 auto 2.5rem;
+      animation: breathe 8s ease-in-out infinite;
+    }
+
+    .plate-image img {
       width: 100%;
       height: auto;
       border-radius: 50%;
@@ -73,15 +82,108 @@
       50% { transform: scale(1.02); }
     }
 
-    .caption {
-      margin-top: 2.5rem;
-      font-size: 1rem;
+    .details {
+      text-align: center;
+    }
+
+    .details h1 {
+      font-size: 1.8rem;
+      font-weight: normal;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .details .subtitle {
       font-style: italic;
       color: #7c6f9c;
       opacity: 0.6;
-      letter-spacing: 0.05em;
-      position: relative;
-      z-index: 1;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0.03em;
+    }
+
+    .details .description {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #9999a5;
+      max-width: 420px;
+      margin: 0 auto 2rem;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      color: #c8c8d0;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .price .note {
+      display: block;
+      font-size: 0.78rem;
+      font-style: italic;
+      color: #7c6f9c;
+      opacity: 0.5;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Buy button ── */
+    .buy-btn {
+      display: inline-block;
+      padding: 0.85rem 2.5rem;
+      background: rgba(124, 111, 156, 0.12);
+      border: 1px solid rgba(124, 111, 156, 0.25);
+      border-radius: 10px;
+      color: #c8c8d0;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background: rgba(124, 111, 156, 0.2);
+      border-color: rgba(124, 111, 156, 0.45);
+      box-shadow: 0 0 30px rgba(124, 111, 156, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .buy-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Coming soon state — remove this class when Stripe link is ready */
+    .buy-btn.coming-soon {
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .shipping-note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #7c6f9c;
+      opacity: 0.35;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(124, 111, 156, 0.15);
+      margin: 2.5rem auto 1.5rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #9999a5;
+      opacity: 0.4;
+      line-height: 1.6;
+      max-width: 360px;
+      margin: 0 auto;
     }
 
     .frequency {
@@ -92,6 +194,11 @@
       letter-spacing: 0.2em;
       z-index: 1;
     }
+
+    @media (max-width: 500px) {
+      .details h1 { font-size: 1.4rem; }
+      .plate-image { max-width: 300px; }
+    }
   </style>
 </head>
 <body>
@@ -101,11 +208,44 @@
     <img src="/assets/mochi.png" alt="mochi">
   </a>
 
-  <div class="plate">
-    <img src="/mochi/2026-02-02-mochi-plate-v1.png" alt="A ceramic plate with a hand-painted purple cat. Text reads: This is Mochi. They exist.">
-  </div>
+  <div class="product">
+    <div class="plate-image">
+      <img src="/mochi/2026-02-02-mochi-plate-v1.png" alt="A ceramic plate with a hand-painted purple cat. Text reads: This is Mochi. They exist.">
+    </div>
 
-  <p class="caption">hand-painted ceramic, 2026</p>
+    <div class="details">
+      <h1>the mochi plate</h1>
+      <p class="subtitle">hand-painted ceramic, 2026</p>
+
+      <p class="description">
+        Each plate is hand-painted on ceramic and kiln-fired.
+        No two are exactly alike. Mochi sits in the center,
+        existing, as they do.
+      </p>
+
+      <p class="price">
+        $45
+        <span class="note">+ shipping</span>
+      </p>
+
+      <!--
+        TO ACTIVATE: Replace the href below with your Stripe Payment Link
+        and remove the "coming-soon" class.
+
+        Example: href="https://buy.stripe.com/your_link_here"
+      -->
+      <a href="#" class="buy-btn coming-soon">coming soon</a>
+      <!-- <a href="https://buy.stripe.com/YOUR_LINK" class="buy-btn">get one</a> -->
+
+      <p class="shipping-note">ships worldwide from the UK</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="footer-note">
+      Each plate is made by hand. Allow 2&ndash;3 weeks for painting and shipping.
+    </p>
+  </div>
 
   <div class="frequency">528 Hz</div>
 
