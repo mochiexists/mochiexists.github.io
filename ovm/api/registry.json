@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-04-17T13:29:46Z",
+  "base_url": "https://ovm.sh/api",
+  "products": [
+    {
+      "product": "claude",
+      "display_name": "Claude Code",
+      "source": "npm:@anthropic-ai/claude-code",
+      "latest": "2.1.112",
+      "version_count": 380,
+      "updated_at": "2026-04-17T13:29:46Z"
+    },
+    {
+      "product": "codex",
+      "display_name": "Codex",
+      "source": "github:openai/codex",
+      "latest": "rust-v0.122.0-alpha.6",
+      "version_count": 712,
+      "updated_at": "2026-04-17T13:29:46Z"
+    }
+  ]
+}

@@ -1,2 +1,3 @@
 {"ts":"2026-04-17T09:42:43Z","event":"skip-no-verify","kind":"config-tweak","summary":"Bootstrap spec-of-dust workflow for mochiexists.com","reason":"Initial sod setup — no active change file exists yet","files":[".spec/"],"command":"git commit --no-verify"}
 {"ts":"2026-04-17T13:49:42Z","event":"skip-no-verify","kind":"config-tweak","summary":"archive cursor-repel-headline to .spec/archive","reason":"completed change archival, trivial file move","files":[".spec/archive/2026-04-17-134903-cursor-repel-headline.md"],"command":"git commit --no-verify"}
+{"ts":"2026-04-17T14:13:09Z","type":"trivial","summary":"Add OVM version registry API JSON files to ovm/api/","skip_reason":"static data files, no tracked text changes"}

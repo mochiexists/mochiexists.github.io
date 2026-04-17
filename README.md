@@ -6,11 +6,11 @@ Static site for Mochi. Hosted on GitHub Pages.
 ## sod
 
 - Version: `0.0.1`
-- Files: `33`
-- Lines: `5326`
-- Words: `19643`
-- Characters: `180560`
-- Est. tokens: `45154`
+- Files: `36`
+- Lines: `9742`
+- Words: `26291`
+- Characters: `266023`
+- Est. tokens: `66521`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `4367 / 5000 target`
 
