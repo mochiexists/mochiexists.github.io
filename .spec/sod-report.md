@@ -4,12 +4,12 @@
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
 - Total files: `28`
-- Total lines: `3071`
-- Total words: `10772`
-- Total characters: `88986`
-- Total estimated tokens: `22259`
+- Total lines: `3072`
+- Total words: `10783`
+- Total characters: `89282`
+- Total estimated tokens: `22333`
 - bootstrap sod: `1880 / 3000 target`
-- operational sod: `4760 / 5000 target`
+- operational sod: `2244 / 5000 target`
 
 | File | Lines | Words | Characters | Est. tokens |
 | --- | ---: | ---: | ---: | ---: |
@@ -19,10 +19,10 @@
 | `.githooks/prepare-commit-msg` | 10 | 26 | 250 | 63 |
 | `.gitignore` | 11 | 17 | 101 | 26 |
 | `.spec/FLOW.md` | 120 | 1083 | 7074 | 1769 |
+| `.spec/archive/2026-04-17-134903-cursor-repel-headline.md` | 93 | 1469 | 10062 | 2516 |
 | `.spec/b-startup.md` | 12 | 66 | 441 | 111 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
-| `.spec/changes/cursor-repel-headline.md` | 93 | 1469 | 10062 | 2516 |
-| `.spec/devlog.jsonl` | 1 | 16 | 259 | 65 |
+| `.spec/devlog.jsonl` | 2 | 27 | 555 | 139 |
 | `.spec/flowlog.jsonl` | 1 | 28 | 339 | 85 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
 | `CLAUDE.md` | 11 | 78 | 556 | 139 |
