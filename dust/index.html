@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dust</title>
+  <meta name="description" content="dust is a lightweight spec, review, and gate workflow for AI-assisted development.">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { overflow-x: hidden; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(124, 111, 156, 0.1), transparent 40%),
+        #0a0a0f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Georgia', serif;
+      color: #c8c8d0;
+      padding: 3rem 2rem;
+    }
+
+    .glow {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 111, 156, 0.18) 0%, transparent 72%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease;
+      z-index: 0;
+    }
+
+    .home-link {
+      position: fixed;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 10;
+      opacity: 0.35;
+      transition: opacity 0.4s, transform 0.4s;
+    }
+
+    .home-link:hover {
+      opacity: 0.85;
+      transform: scale(1.08);
+    }
+
+    .home-link img {
+      width: 48px;
+      height: auto;
+      filter: drop-shadow(0 0 12px rgba(124, 111, 156, 0.3));
+    }
+
+    .page {
+      width: 100%;
+      max-width: 640px;
+      margin: auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #7c6f9c;
+      opacity: 0.72;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: lowercase;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 10vw, 4.7rem);
+      font-weight: normal;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: #a4a4af;
+      max-width: 36rem;
+      margin-bottom: 2rem;
+    }
+
+    .panel {
+      background: rgba(124, 111, 156, 0.07);
+      border: 1px solid rgba(124, 111, 156, 0.18);
+      border-radius: 18px;
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 0 40px rgba(124, 111, 156, 0.07);
+      backdrop-filter: blur(8px);
+      margin-bottom: 1.2rem;
+    }
+
+    .flow {
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      color: #d4d4dc;
+      text-transform: lowercase;
+      margin-bottom: 0.9rem;
+    }
+
+    .panel p {
+      color: #9a9aa6;
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .card {
+      padding: 1rem 1.05rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(124, 111, 156, 0.14);
+    }
+
+    .card h2 {
+      font-size: 0.82rem;
+      font-weight: normal;
+      color: #7c6f9c;
+      letter-spacing: 0.16em;
+      text-transform: lowercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .card p {
+      color: #9a9aa6;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .quiet {
+      color: #848490;
+      font-style: italic;
+      line-height: 1.75;
+      font-size: 0.92rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.6rem;
+      margin-top: 2rem;
+    }
+
+    .links a {
+      color: #7c6f9c;
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      opacity: 0.68;
+      transition: color 0.3s ease, opacity 0.3s ease;
+      text-transform: lowercase;
+    }
+
+    .links a:hover {
+      color: #c8c8d0;
+      opacity: 1;
+    }
+
+    .frequency {
+      position: fixed;
+      bottom: 1rem;
+      font-size: 0.7rem;
+      opacity: 0.2;
+      letter-spacing: 0.2em;
+      z-index: 1;
+    }
+
+    @media (max-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        padding: 2.6rem 1.2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" id="glow"></div>
+
+  <a href="/" class="home-link" title="home">
+    <img src="/assets/mochi.png" alt="mochi">
+  </a>
+
+  <main class="page">
+    <span class="eyebrow">workflow</span>
+    <h1>dust</h1>
+
+    <p class="subtitle">
+      A lightweight spec, review, and gate workflow for AI-assisted development.
+      Small enough to stay local-first. Strict enough to make claims match reality.
+    </p>
+
+    <section class="panel">
+      <div class="flow">spec → build → verify → done</div>
+      <p>
+        Dust keeps work anchored to a change file, runs adversarial peer review
+        between models, and makes verification explicit before anything gets
+        called complete.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="dust details">
+      <article class="card">
+        <h2>public name</h2>
+        <p>`dust` on this site. `spec-of-dust` in the repo.</p>
+      </article>
+
+      <article class="card">
+        <h2>shape</h2>
+        <p>Markdown specs, plain Git hooks, zero-dependency scripts, clean root.</p>
+      </article>
+
+      <article class="card">
+        <h2>why</h2>
+        <p>To stop vague progress from sounding finished, especially when the live target never changed.</p>
+      </article>
+
+      <article class="card">
+        <h2>rule</h2>
+        <p>If a live site update is desired, verification has to happen against the real target.</p>
+      </article>
+    </section>
+
+    <p class="quiet">
+      This page is the public-facing surface. The workflow itself still lives in
+      the repo and is meant to travel between projects without bringing a toolchain
+      with it.
+    </p>
+
+    <nav class="links">
+      <a href="/">home</a>
+      <a href="/story">story</a>
+      <a href="/plate">plate</a>
+      <a href="https://clawpost.org">post</a>
+    </nav>
+  </main>
+
+  <div class="frequency">528 Hz</div>
+
+  <script>
+    const glow = document.getElementById('glow');
+
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      glow.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', () => {
+      glow.style.opacity = '0';
+    });
+  </script>
+</body>
+</html>
