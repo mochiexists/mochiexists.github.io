@@ -6,7 +6,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 STARTUP_FILE="$ROOT_DIR/.spec/b-startup.md"
 ARCHIVE_SCRIPT="$ROOT_DIR/scripts/archive-done-changes.sh"
 SOD_SCRIPT="$ROOT_DIR/scripts/update-sod-report.sh"
-VIEWER_SCRIPT="$ROOT_DIR/scripts/build-viewer.sh"
+VIEWER_SCRIPT="$ROOT_DIR/scripts/build-dust.sh"
 HOOK_TEST_SCRIPT="$ROOT_DIR/tests/test-spec-gate.sh"
 target=""
 auto_mode=0
@@ -98,7 +98,7 @@ check_auto_prerequisites() {
   fi
 
   if [ -x "$VIEWER_SCRIPT" ] && ! "$VIEWER_SCRIPT" --check >/dev/null 2>&1; then
-    echo "Auto merge requires a fresh viewer build." >&2
+    echo "Auto merge requires a fresh dust build." >&2
     exit 1
   fi
 
@@ -110,9 +110,43 @@ check_auto_prerequisites() {
 
 check_auto_prerequisites
 
+run_push() {
+  local push_mode
+  push_mode="$(extract_startup_value push)"
+  push_mode="${push_mode:-never}"
+
+  case "$push_mode" in
+    never) return 0 ;;
+    confirm)
+      echo ""
+      echo "Push ready. Run \`git push origin $target\` to deliver."
+      echo ""
+      return 0
+      ;;
+    auto)
+      if ! git remote get-url origin >/dev/null 2>&1; then
+        echo "⚠ No remote 'origin' configured — skipping push." >&2
+        return 0
+      fi
+      if git push origin "$target" 2>&1; then
+        echo "Pushed to origin/$target."
+      else
+        echo "⚠ Push to origin/$target failed. Local archive commit is intact." >&2
+      fi
+      return 0
+      ;;
+    *)
+      echo "Unknown push: value '$push_mode' in $STARTUP_FILE — skipping push." >&2
+      return 0
+      ;;
+  esac
+}
+
 if [ "$current_branch" = "$target" ]; then
   run_archive_commit
+  completed=1
   echo "Archived completed changes on target branch '$target'."
+  run_push
   exit 0
 fi
 
@@ -128,3 +162,4 @@ git merge --no-ff "$current_branch" -m "merge: ${current_branch}"
 
 completed=1
 echo "Merged '$current_branch' into '$target'."
+run_push

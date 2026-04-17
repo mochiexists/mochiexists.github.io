@@ -3,41 +3,46 @@
 - Version: `0.0.1`
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
-- Total files: `28`
-- Total lines: `3072`
-- Total words: `10783`
-- Total characters: `89282`
-- Total estimated tokens: `22333`
-- bootstrap sod: `1880 / 3000 target`
-- operational sod: `2244 / 5000 target`
+- Total files: `33`
+- Total lines: `5326`
+- Total words: `19643`
+- Total characters: `180564`
+- Total estimated tokens: `45155`
+- bootstrap sod: `2350 / 3000 target`
+- operational sod: `4368 / 5000 target`
 
 | File | Lines | Words | Characters | Est. tokens |
 | --- | ---: | ---: | ---: | ---: |
-| `.githooks/_spec_gate.sh` | 547 | 1588 | 12678 | 3170 |
+| `.githooks/_spec_gate.sh` | 547 | 1588 | 12672 | 3168 |
 | `.githooks/post-merge` | 8 | 24 | 243 | 61 |
 | `.githooks/pre-commit` | 21 | 92 | 636 | 159 |
 | `.githooks/prepare-commit-msg` | 10 | 26 | 250 | 63 |
 | `.gitignore` | 11 | 17 | 101 | 26 |
-| `.spec/FLOW.md` | 120 | 1083 | 7074 | 1769 |
+| `.spec/FLOW.md` | 143 | 1384 | 8944 | 2236 |
 | `.spec/archive/2026-04-17-134903-cursor-repel-headline.md` | 93 | 1469 | 10062 | 2516 |
-| `.spec/b-startup.md` | 12 | 66 | 441 | 111 |
+| `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
+| `.spec/changes/reconcile-sod-and-fix-yolo-page.md` | 77 | 887 | 6613 | 1654 |
 | `.spec/devlog.jsonl` | 2 | 27 | 555 | 139 |
-| `.spec/flowlog.jsonl` | 1 | 28 | 339 | 85 |
+| `.spec/flowlog.jsonl` | 2 | 52 | 661 | 166 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
 | `CLAUDE.md` | 11 | 78 | 556 | 139 |
 | `CNAME` | 0 | 1 | 15 | 4 |
 | `README.md` | 20 | 55 | 399 | 100 |
 | `VERSION` | 1 | 1 | 6 | 2 |
 | `assets/repel.js` | 87 | 268 | 2348 | 587 |
+| `docs/dust.html` | 618 | 3319 | 33584 | 8396 |
 | `dust/index.html` | 284 | 654 | 6609 | 1653 |
 | `index.html` | 155 | 332 | 3513 | 879 |
 | `plate/index.html` | 279 | 665 | 6613 | 1654 |
 | `plate/lobster.html` | 285 | 682 | 6749 | 1688 |
-| `scripts/archive-done-changes.sh` | 103 | 265 | 2143 | 536 |
-| `scripts/build-viewer.sh` | 241 | 755 | 7000 | 1750 |
-| `scripts/devlog.sh` | 71 | 333 | 2423 | 606 |
-| `scripts/flowlog.sh` | 83 | 395 | 2914 | 729 |
-| `scripts/merge-completed-work.sh` | 130 | 372 | 2926 | 732 |
+| `scripts/archive-done-changes.sh` | 103 | 265 | 2139 | 535 |
+| `scripts/build-dust.sh` | 241 | 754 | 6987 | 1747 |
+| `scripts/devlog.sh` | 71 | 334 | 2426 | 607 |
+| `scripts/flowlog.sh` | 83 | 396 | 2917 | 730 |
+| `scripts/merge-completed-work.sh` | 165 | 475 | 3749 | 938 |
 | `scripts/update-sod-report.sh` | 297 | 832 | 7154 | 1789 |
+| `setup.sh` | 138 | 598 | 3807 | 952 |
 | `story/index.html` | 145 | 398 | 3713 | 929 |
+| `templates/dust.html` | 618 | 1714 | 20044 | 5011 |
+| `yolo/index.html` | 743 | 1911 | 24222 | 6056 |

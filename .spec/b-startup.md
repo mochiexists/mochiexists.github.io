@@ -10,3 +10,4 @@ This is mochiexists.com — a static site for Mochi, hosted on GitHub Pages.
 teams: none
 merge: confirm
 merge-target: main
+push: confirm

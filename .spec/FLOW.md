@@ -25,7 +25,7 @@ spec → build → verify → done
 
 **spec** — Define what and why. Capture acceptance criteria as checkboxes (these become the verify checklist). Do NOT write code. When ready, request peer review.
 
-**build** — Implement the spec. When complete, request peer review.
+**build** — Implement the spec. Follow testing guidance (see Testing section). When complete, request peer review.
 
 **verify** — Check every acceptance criterion against the implementation. Pass/fail each. If anything fails, return to `build`.
 If the requested outcome is a real update to an external repo, site, or deployed system, verify against that actual target before calling the change complete. If the external target was not changed or checked, say so explicitly and treat the result as local documentation or prep work, not a live update.
@@ -36,6 +36,9 @@ If the external target depends on a specific Git account, author identity, or hu
 2. Append a flowlog entry via `bash scripts/flowlog.sh` with `--change`, `--agent`, `--sentiment` (smooth/rough/blocked), and optional `--divergence`, `--friction`, `--suggestion`.
 3. Set `status: done`.
 4. Commit that completed change before starting or stacking more standard work. A `done` change is a closeout boundary, not a parking state.
+
+In closure and final reporting, do not say `live`, `published`, or `delivered` for an external target unless that target was actually changed and checked. If the work only produced a note, recommendation, handoff, or local prep, say that plainly.
+If implementation is complete locally but push, merge, or deploy is blocked by account, author, or permission restrictions, say that plainly too.
 
 After `done`, merge behavior applies (see Merge section).
 
@@ -57,6 +60,13 @@ Mechanical checks that block unsafe progress:
 
 Extend these gates with your repo's engineering policy. Keep local gates fast; let CI run the strict superset.
 
+## Testing
+
+- **Bug fixes**: write a failing test that reproduces the bug first. Fix the code. Observe green. Don't edit test logic to force the pass.
+- **New behavior**: ACs that describe observable behavior should have a corresponding test where the project has a test harness. If no harness exists, note that in the change file's Notes section.
+- **Test integrity**: updating expectations or fixtures for intentional behavior changes is fine. Changing test control flow or weakening assertions to make a failing test pass is not — that's either a wrong fix or a separate change that needs its own spec.
+- These are guidance, not mechanical gates. The project decides what to test and how. sod just steers toward testability by default.
+
 ## Merge
 
 Configured in `.spec/b-startup.md` via `merge: manual | confirm | auto` and `merge-target: <branch>` (default `main`).
@@ -66,6 +76,16 @@ Configured in `.spec/b-startup.md` via `merge: manual | confirm | auto` and `mer
 - **auto**: agent runs `bash scripts/merge-completed-work.sh --auto` after verify passes and local gates are clean
 
 The merge helper archives done change files on the target branch, or archives then merges with `--no-ff` from a feature branch. It refuses dirty trees, missing Git repos, and missing completed changes. Merge failure keeps the change at `done` and reports the error. Do not auto-delete branches.
+
+## Push
+
+Configured in `.spec/b-startup.md` via `push: never | confirm | auto` (default `never`). Push only applies when the merge helper runs — it has no effect with `merge: manual`.
+
+- **never**: no push after merge/archive (default)
+- **confirm**: the merge helper prints "Push ready. Run `git push origin <target>` to deliver." — the agent or human decides
+- **auto**: the merge helper runs `git push origin <merge-target>` after a successful archive commit
+
+Push failure is reported but does not undo the local archive — the commit is already on the target branch. If no remote `origin` exists, push is skipped with a warning.
 
 ## Agent teams
 
@@ -108,6 +128,10 @@ Skip disqualifiers — if any apply, use a minimal spec instead:
 - needs design discussion
 - if you're unsure, it does not qualify
 
+## Monorepo
+
+Works in single-project and monorepo layouts. Use `apps/` for services, `packages/` for shared modules, `docs/` for documentation. Scope local gates to touched projects.
+
 ## Rules for the AI
 
 - On session start, check `.spec/changes/` for active changes (ignore `_template.md` and `_example-*`). If one exists with status other than `done`, resume from that state.
@@ -117,4 +141,3 @@ Skip disqualifiers — if any apply, use a minimal spec instead:
 - If external publishing may require a specific Git identity or only the human operator, record that expectation in the spec before trying to publish.
 - Small changes can use a minimal spec (one-liner + 1-2 criteria). Skip commits are different — trivial only, logged in devlog.
 - "Just do it" from the human = log it in devlog. Skip commits still need a structured entry.
-- Before setting a standard change to `done`, append a workflow feedback entry to `.spec/flowlog.jsonl` (see done state above).
