@@ -9,7 +9,7 @@ Static site for Mochi. Hosted on GitHub Pages.
 - Files: `28`
 - Lines: `3071`
 - Words: `10772`
-- Characters: `88988`
+- Characters: `88986`
 - Est. tokens: `22259`
 - bootstrap sod: `1880 / 3000 target`
 - operational sod: `4760 / 5000 target`

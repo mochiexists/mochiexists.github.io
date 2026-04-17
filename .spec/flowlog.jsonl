@@ -1,0 +1,1 @@
+{"ts":"2026-04-17T12:49:08Z","agent":"claude","change":"cursor-repel-headline","flow_divergence":"","friction":"rAF throttling in hidden tabs blocked automated visual verify of the live transforms","suggestion":"document the rAF-throttle gotcha somewhere so future UI verify work uses math replica or foreground tab","sentiment":"smooth"}

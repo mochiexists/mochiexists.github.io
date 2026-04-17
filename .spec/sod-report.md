@@ -6,7 +6,7 @@
 - Total files: `28`
 - Total lines: `3071`
 - Total words: `10772`
-- Total characters: `88988`
+- Total characters: `88986`
 - Total estimated tokens: `22259`
 - bootstrap sod: `1880 / 3000 target`
 - operational sod: `4760 / 5000 target`
@@ -21,7 +21,7 @@
 | `.spec/FLOW.md` | 120 | 1083 | 7074 | 1769 |
 | `.spec/b-startup.md` | 12 | 66 | 441 | 111 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
-| `.spec/changes/cursor-repel-headline.md` | 93 | 1469 | 10064 | 2516 |
+| `.spec/changes/cursor-repel-headline.md` | 93 | 1469 | 10062 | 2516 |
 | `.spec/devlog.jsonl` | 1 | 16 | 259 | 65 |
 | `.spec/flowlog.jsonl` | 1 | 28 | 339 | 85 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |

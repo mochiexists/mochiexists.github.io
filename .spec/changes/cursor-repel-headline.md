@@ -1,4 +1,4 @@
-status: verify
+status: done
 files:
   - index.html
   - dust/index.html
