@@ -1,4 +1,4 @@
-status: verify
+status: done
 files:
   - scripts/*.sh
   - .githooks/_spec_gate.sh

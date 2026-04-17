@@ -6,10 +6,10 @@
 - Total files: `33`
 - Total lines: `5326`
 - Total words: `19643`
-- Total characters: `180564`
-- Total estimated tokens: `45155`
+- Total characters: `180560`
+- Total estimated tokens: `45154`
 - bootstrap sod: `2350 / 3000 target`
-- operational sod: `4368 / 5000 target`
+- operational sod: `4367 / 5000 target`
 
 | File | Lines | Words | Characters | Est. tokens |
 | --- | ---: | ---: | ---: | ---: |
@@ -22,7 +22,7 @@
 | `.spec/archive/2026-04-17-134903-cursor-repel-headline.md` | 93 | 1469 | 10062 | 2516 |
 | `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
-| `.spec/changes/reconcile-sod-and-fix-yolo-page.md` | 77 | 887 | 6613 | 1654 |
+| `.spec/changes/reconcile-sod-and-fix-yolo-page.md` | 77 | 887 | 6611 | 1653 |
 | `.spec/devlog.jsonl` | 2 | 27 | 555 | 139 |
 | `.spec/flowlog.jsonl` | 2 | 52 | 661 | 166 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
@@ -31,7 +31,7 @@
 | `README.md` | 20 | 55 | 399 | 100 |
 | `VERSION` | 1 | 1 | 6 | 2 |
 | `assets/repel.js` | 87 | 268 | 2348 | 587 |
-| `docs/dust.html` | 618 | 3319 | 33584 | 8396 |
+| `docs/dust.html` | 618 | 3319 | 33582 | 8396 |
 | `dust/index.html` | 284 | 654 | 6609 | 1653 |
 | `index.html` | 155 | 332 | 3513 | 879 |
 | `plate/index.html` | 279 | 665 | 6613 | 1654 |
