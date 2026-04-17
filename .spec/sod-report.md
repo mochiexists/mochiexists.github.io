@@ -3,11 +3,11 @@
 - Version: `0.0.1`
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
-- Total files: `36`
-- Total lines: `9742`
-- Total words: `26291`
-- Total characters: `266023`
-- Total estimated tokens: `66521`
+- Total files: `37`
+- Total lines: `10542`
+- Total words: `27497`
+- Total characters: `279574`
+- Total estimated tokens: `69908`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `4367 / 5000 target`
 
@@ -23,7 +23,7 @@
 | `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
 | `.spec/changes/reconcile-sod-and-fix-yolo-page.md` | 77 | 887 | 6611 | 1653 |
-| `.spec/devlog.jsonl` | 3 | 42 | 725 | 182 |
+| `.spec/devlog.jsonl` | 4 | 46 | 808 | 202 |
 | `.spec/flowlog.jsonl` | 2 | 52 | 661 | 166 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
 | `CLAUDE.md` | 11 | 78 | 556 | 139 |
@@ -36,7 +36,8 @@
 | `index.html` | 155 | 332 | 3513 | 879 |
 | `ovm/api/claude.json` | 1533 | 2303 | 25748 | 6437 |
 | `ovm/api/codex.json` | 2859 | 4290 | 58978 | 14745 |
-| `ovm/api/registry.json` | 23 | 40 | 567 | 142 |
+| `ovm/api/pi.json` | 791 | 1188 | 13264 | 3316 |
+| `ovm/api/registry.json` | 31 | 54 | 771 | 193 |
 | `plate/index.html` | 279 | 665 | 6613 | 1654 |
 | `plate/lobster.html` | 285 | 682 | 6749 | 1688 |
 | `scripts/archive-done-changes.sh` | 103 | 265 | 2139 | 535 |

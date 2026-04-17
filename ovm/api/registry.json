@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-04-17T13:29:46Z",
+  "updated_at": "2026-04-17T14:42:44Z",
   "base_url": "https://ovm.sh/api",
   "products": [
     {
@@ -18,6 +18,14 @@
       "latest": "rust-v0.122.0-alpha.6",
       "version_count": 712,
       "updated_at": "2026-04-17T13:29:46Z"
+    },
+    {
+      "product": "pi",
+      "display_name": "Pi",
+      "source": "github:badlogic/pi-mono",
+      "latest": "0.67.6",
+      "version_count": 195,
+      "updated_at": "2026-04-17T14:42:44Z"
     }
   ]
 }
