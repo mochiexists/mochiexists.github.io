@@ -1,0 +1,27 @@
+/* Shared primitives for mochiexists.com pages.
+   Shared color values: bg #0a0a0f, accent #7c6f9c, text #c8c8d0.
+   Page-specific sizes/layouts (headline, glow radius, nav spacing) stay inline. */
+
+.repel span {
+  display: inline-block;
+}
+
+.frequency {
+  position: fixed;
+  bottom: 1rem;
+  font-size: 0.7rem;
+  opacity: 0.2;
+  letter-spacing: 0.2em;
+  z-index: 1;
+}
+
+.links a {
+  color: #7c6f9c;
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.links a:hover {
+  color: #c8c8d0;
+  opacity: 1;
+}

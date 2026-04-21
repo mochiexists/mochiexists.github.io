@@ -3,13 +3,13 @@
 - Version: `0.0.1`
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
-- Total files: `37`
-- Total lines: `10542`
-- Total words: `27497`
-- Total characters: `279574`
-- Total estimated tokens: `69908`
+- Total files: `39`
+- Total lines: `10599`
+- Total words: `29151`
+- Total characters: `292622`
+- Total estimated tokens: `73170`
 - bootstrap sod: `2350 / 3000 target`
-- operational sod: `4367 / 5000 target`
+- operational sod: `4384 / 5000 target`
 
 | File | Lines | Words | Characters | Est. tokens |
 | --- | ---: | ---: | ---: | ---: |
@@ -22,18 +22,20 @@
 | `.spec/archive/2026-04-17-134903-cursor-repel-headline.md` | 93 | 1469 | 10062 | 2516 |
 | `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
+| `.spec/changes/cleanup-orphans-and-extract-css.md` | 66 | 915 | 6679 | 1670 |
 | `.spec/changes/reconcile-sod-and-fix-yolo-page.md` | 77 | 887 | 6611 | 1653 |
 | `.spec/devlog.jsonl` | 4 | 46 | 808 | 202 |
-| `.spec/flowlog.jsonl` | 2 | 52 | 661 | 166 |
+| `.spec/flowlog.jsonl` | 3 | 98 | 1133 | 284 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
 | `CLAUDE.md` | 11 | 78 | 556 | 139 |
 | `CNAME` | 0 | 1 | 15 | 4 |
 | `README.md` | 20 | 55 | 399 | 100 |
 | `VERSION` | 1 | 1 | 6 | 2 |
+| `assets/mochi.css` | 27 | 69 | 526 | 132 |
 | `assets/repel.js` | 87 | 268 | 2348 | 587 |
-| `docs/dust.html` | 618 | 3319 | 33582 | 8396 |
-| `dust/index.html` | 284 | 654 | 6609 | 1653 |
-| `index.html` | 155 | 332 | 3513 | 879 |
+| `docs/dust.html` | 619 | 4002 | 39503 | 9876 |
+| `dust/index.html` | 264 | 617 | 6272 | 1568 |
+| `index.html` | 136 | 298 | 3194 | 799 |
 | `ovm/api/claude.json` | 1533 | 2303 | 25748 | 6437 |
 | `ovm/api/codex.json` | 2859 | 4290 | 58978 | 14745 |
 | `ovm/api/pi.json` | 791 | 1188 | 13264 | 3316 |
@@ -48,5 +50,5 @@
 | `scripts/update-sod-report.sh` | 297 | 832 | 7154 | 1789 |
 | `setup.sh` | 138 | 598 | 3807 | 952 |
 | `story/index.html` | 145 | 398 | 3713 | 929 |
-| `templates/dust.html` | 618 | 1714 | 20044 | 5011 |
+| `templates/dust.html` | 619 | 1726 | 20150 | 5038 |
 | `yolo/index.html` | 743 | 1911 | 24222 | 6056 |
