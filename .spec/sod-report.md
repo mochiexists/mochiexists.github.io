@@ -6,10 +6,10 @@
 - Total files: `40`
 - Total lines: `10830`
 - Total words: `31354`
-- Total characters: `310549`
+- Total characters: `310547`
 - Total estimated tokens: `77652`
 - bootstrap sod: `2350 / 3000 target`
-- operational sod: `4500 / 5000 target`
+- operational sod: `4384 / 5000 target`
 
 | File | Lines | Words | Characters | Est. tokens |
 | --- | ---: | ---: | ---: | ---: |
@@ -23,7 +23,7 @@
 | `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
 | `.spec/changes/cleanup-orphans-and-extract-css.md` | 66 | 915 | 6677 | 1670 |
-| `.spec/changes/dust-filter-poetry-view.md` | 68 | 1044 | 7142 | 1786 |
+| `.spec/changes/dust-filter-poetry-view.md` | 68 | 1044 | 7141 | 1786 |
 | `.spec/changes/reconcile-sod-and-fix-yolo-page.md` | 77 | 887 | 6611 | 1653 |
 | `.spec/devlog.jsonl` | 4 | 46 | 808 | 202 |
 | `.spec/flowlog.jsonl` | 4 | 142 | 1571 | 393 |
@@ -34,7 +34,7 @@
 | `VERSION` | 1 | 1 | 6 | 2 |
 | `assets/mochi.css` | 27 | 69 | 526 | 132 |
 | `assets/repel.js` | 87 | 268 | 2348 | 587 |
-| `docs/dust.html` | 701 | 4898 | 47380 | 11845 |
+| `docs/dust.html` | 701 | 4898 | 47379 | 11845 |
 | `dust/index.html` | 264 | 617 | 6272 | 1568 |
 | `index.html` | 136 | 298 | 3194 | 799 |
 | `ovm/api/claude.json` | 1533 | 2303 | 25748 | 6437 |

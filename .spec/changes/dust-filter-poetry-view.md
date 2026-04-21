@@ -1,4 +1,4 @@
-status: build
+status: done
 files:
   - docs/dust.html
   - templates/dust.html
