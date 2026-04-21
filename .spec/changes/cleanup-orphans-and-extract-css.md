@@ -1,4 +1,4 @@
-status: verify
+status: done
 files:
   - assets/mochi.css
   - index.html
