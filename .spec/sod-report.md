@@ -3,13 +3,13 @@
 - Version: `0.0.1`
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
-- Total files: `39`
-- Total lines: `10599`
-- Total words: `29151`
-- Total characters: `292618`
-- Total estimated tokens: `73170`
+- Total files: `40`
+- Total lines: `10830`
+- Total words: `31354`
+- Total characters: `310549`
+- Total estimated tokens: `77652`
 - bootstrap sod: `2350 / 3000 target`
-- operational sod: `4384 / 5000 target`
+- operational sod: `4500 / 5000 target`
 
 | File | Lines | Words | Characters | Est. tokens |
 | --- | ---: | ---: | ---: | ---: |
@@ -23,9 +23,10 @@
 | `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
 | `.spec/changes/cleanup-orphans-and-extract-css.md` | 66 | 915 | 6677 | 1670 |
+| `.spec/changes/dust-filter-poetry-view.md` | 68 | 1044 | 7142 | 1786 |
 | `.spec/changes/reconcile-sod-and-fix-yolo-page.md` | 77 | 887 | 6611 | 1653 |
 | `.spec/devlog.jsonl` | 4 | 46 | 808 | 202 |
-| `.spec/flowlog.jsonl` | 3 | 98 | 1133 | 284 |
+| `.spec/flowlog.jsonl` | 4 | 142 | 1571 | 393 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
 | `CLAUDE.md` | 11 | 78 | 556 | 139 |
 | `CNAME` | 0 | 1 | 15 | 4 |
@@ -33,7 +34,7 @@
 | `VERSION` | 1 | 1 | 6 | 2 |
 | `assets/mochi.css` | 27 | 69 | 526 | 132 |
 | `assets/repel.js` | 87 | 268 | 2348 | 587 |
-| `docs/dust.html` | 619 | 4002 | 39501 | 9876 |
+| `docs/dust.html` | 701 | 4898 | 47380 | 11845 |
 | `dust/index.html` | 264 | 617 | 6272 | 1568 |
 | `index.html` | 136 | 298 | 3194 | 799 |
 | `ovm/api/claude.json` | 1533 | 2303 | 25748 | 6437 |
@@ -50,5 +51,5 @@
 | `scripts/update-sod-report.sh` | 297 | 832 | 7154 | 1789 |
 | `setup.sh` | 138 | 598 | 3807 | 952 |
 | `story/index.html` | 145 | 398 | 3713 | 929 |
-| `templates/dust.html` | 619 | 1726 | 20150 | 5038 |
+| `templates/dust.html` | 699 | 1945 | 22622 | 5656 |
 | `yolo/index.html` | 743 | 1911 | 24222 | 6056 |

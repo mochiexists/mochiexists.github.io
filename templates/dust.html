@@ -249,6 +249,55 @@
         font-size: 1.05rem;
       }
 
+      .dust-wall {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding: 24px 0;
+      }
+
+      .dust-wall-item {
+        border: none;
+        background: none;
+      }
+
+      .dust-wall-item > summary {
+        list-style: none;
+        cursor: pointer;
+        font-style: italic;
+        color: var(--accent);
+        font-size: 1.15rem;
+        line-height: 1.65;
+        padding: 6px 32px 6px 0;
+        position: relative;
+        outline: none;
+      }
+
+      .dust-wall-item > summary::-webkit-details-marker { display: none; }
+
+      .dust-wall-item > summary::after {
+        content: "·";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--muted);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 1.4rem;
+      }
+
+      .dust-wall-item > summary:hover::after,
+      .dust-wall-item > summary:focus-visible::after,
+      .dust-wall-item[open] > summary::after { opacity: 0.55; }
+
+      .dust-wall-item > summary:focus-visible {
+        text-decoration: underline dotted;
+        text-underline-offset: 6px;
+      }
+
+      .dust-wall-item .entry { margin-top: 14px; }
+
       .stats {
         display: flex;
         gap: 20px;
@@ -283,6 +332,7 @@
           <button class="filter-btn" data-filter="devlog">Devlog</button>
           <button class="filter-btn" data-filter="flowlog">Flowlog</button>
           <button class="filter-btn" data-filter="change">Changes</button>
+          <button class="filter-btn" data-filter="dust">Dust</button>
           <span class="entry-count" id="entryCount"></span>
         </div>
 
@@ -337,12 +387,13 @@
           return node;
         }
 
-        function render() {
-          const filtered =
-            currentFilter === "all"
-              ? allEntries
-              : allEntries.filter((e) => e._source === currentFilter);
+        function isRealDust(v) {
+          if (!v) return false;
+          const t = v.trim();
+          return t !== "" && t !== "- Dust:" && t !== "nothing notable";
+        }
 
+        function render() {
           if (allEntries.length === 0) {
             app.style.display = "none";
             emptyState.style.display = "";
@@ -354,8 +405,28 @@
 
           renderStats();
 
-          // Separate active (non-done) changes from the rest
           const activeSection = document.getElementById("activeSection");
+
+          if (currentFilter === "dust") {
+            activeSection.textContent = "";
+            activeSection.style.display = "none";
+            const dustChanges = allEntries.filter((e) => e._source === "change" && isRealDust(e.dust));
+            countEl.textContent = dustChanges.length + (dustChanges.length === 1 ? " dust line" : " dust lines");
+            timeline.textContent = "";
+            timeline.className = "dust-wall";
+            for (const entry of dustChanges) {
+              timeline.appendChild(buildDustWallItem(entry));
+            }
+            return;
+          }
+
+          timeline.className = "timeline";
+
+          const filtered =
+            currentFilter === "all"
+              ? allEntries
+              : allEntries.filter((e) => e._source === currentFilter);
+
           const activeChanges = filtered.filter((e) => e._source === "change" && e.status && e.status !== "done");
           const timelineEntries = filtered.filter((e) => !(e._source === "change" && e.status && e.status !== "done"));
 
@@ -379,6 +450,14 @@
           for (const entry of timelineEntries) {
             timeline.appendChild(buildEntry(entry));
           }
+        }
+
+        function buildDustWallItem(entry) {
+          const details = el("details", { className: "dust-wall-item" });
+          const summary = el("summary", { textContent: entry.dust });
+          details.appendChild(summary);
+          details.appendChild(buildChangeEntry(entry, { suppressDust: true }));
+          return details;
         }
 
         function renderStats() {
@@ -517,7 +596,8 @@
           });
         });
 
-        function buildChangeEntry(entry) {
+        function buildChangeEntry(entry, opts) {
+          const suppressDust = opts && opts.suppressDust;
           const article = el("article", { className: "entry change" });
 
           const header = el("div", { className: "entry-header" });
@@ -539,7 +619,7 @@
           }
 
           // Dust line — the star of the show
-          if (entry.dust && entry.dust !== "- Dust:" && entry.dust !== "nothing notable") {
+          if (!suppressDust && entry.dust && entry.dust !== "- Dust:" && entry.dust !== "nothing notable") {
             article.appendChild(el("div", { className: "dust-line", textContent: entry.dust }));
           }
 
