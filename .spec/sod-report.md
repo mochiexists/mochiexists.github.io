@@ -6,7 +6,7 @@
 - Total files: `40`
 - Total lines: `10170`
 - Total words: `30221`
-- Total characters: `292288`
+- Total characters: `292287`
 - Total estimated tokens: `73087`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `3541 / 5000 target`
@@ -25,7 +25,7 @@
 | `.spec/archive/2026-04-23-102615-reconcile-sod-and-fix-yolo-page.md` | 77 | 887 | 6611 | 1653 |
 | `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
-| `.spec/changes/palette-tokens-drop-yolo-orphan.md` | 72 | 490 | 3308 | 827 |
+| `.spec/changes/palette-tokens-drop-yolo-orphan.md` | 72 | 490 | 3307 | 827 |
 | `.spec/devlog.jsonl` | 4 | 46 | 808 | 202 |
 | `.spec/flowlog.jsonl` | 5 | 143 | 1733 | 434 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
