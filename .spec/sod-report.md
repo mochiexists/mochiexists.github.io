@@ -3,13 +3,13 @@
 - Version: `0.0.1`
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
-- Total files: `40`
-- Total lines: `10170`
-- Total words: `30221`
-- Total characters: `292287`
-- Total estimated tokens: `73087`
+- Total files: `41`
+- Total lines: `10229`
+- Total words: `30575`
+- Total characters: `294811`
+- Total estimated tokens: `73718`
 - bootstrap sod: `2350 / 3000 target`
-- operational sod: `3541 / 5000 target`
+- operational sod: `3348 / 5000 target`
 
 | File | Lines | Words | Characters | Est. tokens |
 | --- | ---: | ---: | ---: | ---: |
@@ -26,6 +26,7 @@
 | `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
 | `.spec/changes/palette-tokens-drop-yolo-orphan.md` | 72 | 490 | 3307 | 827 |
+| `.spec/changes/restore-plate-hero-image.md` | 59 | 354 | 2534 | 634 |
 | `.spec/devlog.jsonl` | 4 | 46 | 808 | 202 |
 | `.spec/flowlog.jsonl` | 5 | 143 | 1733 | 434 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
@@ -42,7 +43,7 @@
 | `ovm/api/codex.json` | 2859 | 4290 | 58978 | 14745 |
 | `ovm/api/pi.json` | 791 | 1188 | 13264 | 3316 |
 | `ovm/api/registry.json` | 31 | 54 | 771 | 193 |
-| `plate/index.html` | 279 | 665 | 6613 | 1654 |
+| `plate/index.html` | 279 | 665 | 6603 | 1651 |
 | `plate/lobster.html` | 285 | 682 | 6749 | 1688 |
 | `scripts/archive-done-changes.sh` | 103 | 265 | 2139 | 535 |
 | `scripts/build-dust.sh` | 241 | 754 | 6987 | 1747 |
