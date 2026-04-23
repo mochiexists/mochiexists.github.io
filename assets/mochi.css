@@ -1,6 +1,16 @@
 /* Shared primitives for mochiexists.com pages.
-   Shared color values: bg #0a0a0f, accent #7c6f9c, text #c8c8d0.
-   Page-specific sizes/layouts (headline, glow radius, nav spacing) stay inline. */
+   This file is the palette source of truth for `site/`. The sibling
+   `yolo/` repo mirrors the same token names inline (it doesn't link
+   this stylesheet — we keep each deployment self-contained) so when
+   one palette moves, both repos should move together by hand. */
+
+:root {
+  --bg:            #0a0a0f;
+  --text:          #d4d4dc;   /* bright primary — headlines, emphasis */
+  --text-muted:    #c8c8d0;   /* body copy (slightly dimmer) */
+  --accent:        #7c6f9c;   /* purple, used for links + glow */
+  --accent-glow:   rgba(124, 111, 156, 0.15);
+}
 
 .repel span {
   display: inline-block;
@@ -16,12 +26,12 @@
 }
 
 .links a {
-  color: #7c6f9c;
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .links a:hover {
-  color: #c8c8d0;
+  color: var(--text-muted);
   opacity: 1;
 }
