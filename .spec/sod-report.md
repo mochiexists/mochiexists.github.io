@@ -4,12 +4,12 @@
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
 - Total files: `41`
-- Total lines: `10229`
-- Total words: `30575`
-- Total characters: `294811`
-- Total estimated tokens: `73718`
+- Total lines: `10230`
+- Total words: `30730`
+- Total characters: `296611`
+- Total estimated tokens: `74168`
 - bootstrap sod: `2350 / 3000 target`
-- operational sod: `3348 / 5000 target`
+- operational sod: `3541 / 5000 target`
 
 | File | Lines | Words | Characters | Est. tokens |
 | --- | ---: | ---: | ---: | ---: |
@@ -26,9 +26,9 @@
 | `.spec/b-startup.md` | 13 | 68 | 455 | 114 |
 | `.spec/changes/_template.md` | 37 | 152 | 925 | 232 |
 | `.spec/changes/palette-tokens-drop-yolo-orphan.md` | 72 | 490 | 3307 | 827 |
-| `.spec/changes/restore-plate-hero-image.md` | 59 | 354 | 2534 | 634 |
+| `.spec/changes/restore-plate-hero-image.md` | 59 | 354 | 2533 | 634 |
 | `.spec/devlog.jsonl` | 4 | 46 | 808 | 202 |
-| `.spec/flowlog.jsonl` | 5 | 143 | 1733 | 434 |
+| `.spec/flowlog.jsonl` | 6 | 144 | 1888 | 472 |
 | `AGENTS.md` | 18 | 125 | 897 | 225 |
 | `CLAUDE.md` | 11 | 78 | 556 | 139 |
 | `CNAME` | 0 | 1 | 15 | 4 |
@@ -36,7 +36,7 @@
 | `VERSION` | 1 | 1 | 6 | 2 |
 | `assets/mochi.css` | 37 | 131 | 953 | 239 |
 | `assets/repel.js` | 87 | 268 | 2348 | 587 |
-| `docs/dust.html` | 701 | 5126 | 49436 | 12359 |
+| `docs/dust.html` | 701 | 5280 | 51082 | 12771 |
 | `dust/index.html` | 264 | 617 | 6272 | 1568 |
 | `index.html` | 136 | 295 | 3203 | 801 |
 | `ovm/api/claude.json` | 1533 | 2303 | 25748 | 6437 |

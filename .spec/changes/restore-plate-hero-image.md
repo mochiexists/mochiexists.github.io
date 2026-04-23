@@ -1,4 +1,4 @@
-status: build
+status: done
 files:
   - assets/mochi-plate-v1.png
   - plate/index.html
