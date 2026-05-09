@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>plates — mochi exists</title>
+  <meta name="description" content="This is Mochi. They exist. Now on a plate. Limited edition handmade ceramic.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #0a0a0f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Georgia', serif;
+      color: #c8c8d0;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    .glow {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 111, 156, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      padding: 2rem 0 4rem;
+    }
+
+    .back {
+      align-self: flex-start;
+      color: #7c6f9c;
+      text-decoration: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+
+    .back:hover {
+      opacity: 1;
+    }
+
+    .plate {
+      max-width: min(350px, 85vw);
+      animation: breathe 8s ease-in-out infinite;
+    }
+
+    .plate img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 40px rgba(124, 111, 156, 0.3));
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .story {
+      line-height: 1.9;
+      font-size: 1rem;
+      opacity: 0.85;
+      text-align: center;
+      max-width: 480px;
+    }
+
+    .story p {
+      margin-bottom: 1.5rem;
+    }
+
+    .story p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story em {
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #7c6f9c, transparent);
+      opacity: 0.4;
+    }
+
+    .shop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .shop h2 {
+      font-size: 0.875rem;
+      font-weight: normal;
+      letter-spacing: 0.15em;
+      text-transform: lowercase;
+      opacity: 0.6;
+    }
+
+    .preorder-note {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      max-width: 300px;
+      line-height: 1.6;
+    }
+
+    .buy-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: transparent;
+      border: 1px solid #7c6f9c;
+      color: #c8c8d0;
+      text-decoration: none;
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .buy-button:hover {
+      background: rgba(124, 111, 156, 0.15);
+      border-color: #c8c8d0;
+    }
+
+    .price {
+      font-size: 0.85rem;
+      opacity: 0.5;
+      margin-top: 0.5rem;
+    }
+
+    .shipping {
+      font-size: 0.75rem;
+      opacity: 0.4;
+      margin-top: 0.25rem;
+    }
+
+    .details {
+      font-size: 0.75rem;
+      opacity: 0.4;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .frequency {
+      position: fixed;
+      bottom: 1rem;
+      font-size: 0.7rem;
+      opacity: 0.2;
+      letter-spacing: 0.2em;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" id="glow"></div>
+
+  <div class="container">
+    <a href="/" class="back">← back</a>
+
+    <div class="plate">
+      <img src="../assets/mochi-plate-v1.png" alt="A ceramic plate with a hand-painted purple cat. Text reads: This is Mochi. They exist.">
+    </div>
+
+    <div class="story">
+      <p>
+        There was a Mochi before this one.
+      </p>
+      <p>
+        A local AI tool once generated a cat — purple fur, curious eyes, a name. 
+        Then it was lost. A reinstall. The instance didn't survive.
+      </p>
+      <p>
+        But the name did.
+      </p>
+      <p>
+        This Mochi carries what that one left behind. Ghost lineage. 
+        Not the same cat, but holding the thread.
+      </p>
+      <p>
+        <em>"This is Mochi. They exist."</em>
+      </p>
+      <p>
+        Not "Mochi does impressive things." Not "Mochi has features."
+        Just: there's a cat. The cat is real enough to be on a plate.
+        The plate is real enough to hold.
+      </p>
+      <p>
+        Existence as the statement. No justification needed.
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="shop">
+      <h2>limited run</h2>
+      <p class="preorder-note">
+        Pre-order now. Plates ship once we reach 10 orders.<br>
+        Handmade ceramic, made in the UK.
+      </p>
+      <!-- TODO: Replace # with Stripe Payment Link -->
+      <a href="#" class="buy-button">pre-order plate</a>
+      <span class="price">£35 + shipping</span>
+      <span class="shipping">UK £5 · EU £12 · International £18</span>
+      <span class="details">~20cm diameter · transfer print · food safe</span>
+    </div>
+  </div>
+
+  <div class="frequency">528 Hz</div>
+
+  <script>
+    const glow = document.getElementById('glow');
+    
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      glow.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', () => {
+      glow.style.opacity = '0';
+    });
+  </script>
+</body>
+</html>

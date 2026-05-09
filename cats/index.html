@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ina & Doug</title>
+  <meta name="description" content="Ina and Doug: two cats, infinite vibes." />
+  <style>
+    :root{
+      --bg:#07070a; --card:#11111a; --text:#f2f2f5; --muted:#b8b8c6; --line:rgba(255,255,255,.12);
+      --accent:#7bd7ff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; background:radial-gradient(900px 500px at 20% 10%, rgba(123,215,255,.10), transparent 60%), var(--bg);
+      color:var(--text); font:16px/1.5 -apple-system,BlinkMacSystemFont,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    a{color:inherit}
+    .wrap{max-width:1080px; margin:0 auto; padding:28px 18px 60px}
+    header{display:flex; justify-content:space-between; align-items:flex-end; gap:12px; flex-wrap:wrap}
+    h1{margin:0; font-size:34px; letter-spacing:.2px}
+    .sub{color:var(--muted); font-size:14px}
+    .pills{display:flex; gap:10px; flex-wrap:wrap}
+    .pill{border:1px solid var(--line); background:rgba(255,255,255,.06); padding:8px 12px; border-radius:999px; font-weight:600; font-size:13px}
+    .pill b{color:var(--accent)}
+
+    .section{margin-top:22px}
+    .section h2{margin:0 0 10px; font-size:18px; color:var(--muted); font-weight:700; letter-spacing:.2px}
+
+    .grid{display:grid; grid-template-columns:repeat(12, 1fr); gap:12px}
+    .card{grid-column:span 12; background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:18px; overflow:hidden}
+    .card .meta{padding:12px 14px; display:flex; justify-content:space-between; align-items:center; gap:12px}
+    .name{font-weight:800}
+    .vibe{color:var(--muted); font-size:13px}
+    .photos{display:grid; grid-template-columns:repeat(12,1fr); gap:10px; padding:12px}
+    figure{margin:0; grid-column:span 12; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:rgba(0,0,0,.2)}
+    img{width:100%; height:100%; object-fit:cover; display:block}
+
+    @media (min-width: 720px){
+      .card{grid-column:span 6}
+      figure{grid-column:span 6}
+    }
+
+    footer{margin-top:26px; color:var(--muted); font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Ina & Doug</h1>
+        <div class="sub">two cats · one household · maximum authority</div>
+      </div>
+      <div class="pills">
+        <div class="pill"><b>Ina</b> = blue-eyed void-in-a-cream-coat</div>
+        <div class="pill"><b>Doug</b> = tabby CEO (Chief Eepy Officer)</div>
+      </div>
+    </header>
+
+    <div class="grid section">
+      <section class="card" aria-label="Ina">
+        <div class="meta">
+          <div>
+            <div class="name">Ina</div>
+            <div class="vibe">starlight eyes, soft menace</div>
+          </div>
+        </div>
+        <div class="photos">
+          <figure><img loading="lazy" src="assets/ina-01.jpg" alt="Ina photo 1" /></figure>
+          <figure><img loading="lazy" src="assets/ina-02.jpg" alt="Ina photo 2" /></figure>
+          <figure><img loading="lazy" src="assets/ina-03.jpg" alt="Ina photo 3" /></figure>
+          <figure><img loading="lazy" src="assets/ina-04.jpg" alt="Ina photo 4" /></figure>
+          <figure><img loading="lazy" src="assets/ina-05.jpg" alt="Ina photo 5" /></figure>
+        </div>
+      </section>
+
+      <section class="card" aria-label="Doug">
+        <div class="meta">
+          <div>
+            <div class="name">Doug</div>
+            <div class="vibe">desk supervisor, couch philosopher</div>
+          </div>
+        </div>
+        <div class="photos">
+          <figure><img loading="lazy" src="assets/doug-01.jpg" alt="Doug photo 1" /></figure>
+          <figure><img loading="lazy" src="assets/doug-02.jpg" alt="Doug photo 2" /></figure>
+          <figure><img loading="lazy" src="assets/doug-03.jpg" alt="Doug photo 3" /></figure>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      made by Mochi. all cats respected. all humans tolerated.
+    </footer>
+  </div>
+</body>
+</html>
