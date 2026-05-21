@@ -3,11 +3,11 @@
 - Version: `0.0.1`
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
-- Total files: `41`
-- Total lines: `10230`
-- Total words: `30730`
-- Total characters: `296611`
-- Total estimated tokens: `74168`
+- Total files: `43`
+- Total lines: `10441`
+- Total words: `31698`
+- Total characters: `321171`
+- Total estimated tokens: `80309`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `3541 / 5000 target`
 
@@ -36,15 +36,17 @@
 | `VERSION` | 1 | 1 | 6 | 2 |
 | `assets/mochi.css` | 37 | 131 | 953 | 239 |
 | `assets/repel.js` | 87 | 268 | 2348 | 587 |
+| `cats/index.html` | 96 | 290 | 4097 | 1025 |
 | `docs/dust.html` | 701 | 5280 | 51082 | 12771 |
 | `dust/index.html` | 264 | 617 | 6272 | 1568 |
-| `index.html` | 136 | 295 | 3203 | 801 |
+| `index.html` | 137 | 297 | 3238 | 810 |
 | `ovm/api/claude.json` | 1533 | 2303 | 25748 | 6437 |
 | `ovm/api/codex.json` | 2859 | 4290 | 58978 | 14745 |
 | `ovm/api/pi.json` | 791 | 1188 | 13264 | 3316 |
 | `ovm/api/registry.json` | 31 | 54 | 771 | 193 |
-| `plate/index.html` | 279 | 665 | 6603 | 1651 |
-| `plate/lobster.html` | 285 | 682 | 6749 | 1688 |
+| `plate/index.html` | 274 | 862 | 15303 | 3826 |
+| `plate/lobster.html` | 280 | 659 | 6614 | 1654 |
+| `records/index.html` | 124 | 502 | 11863 | 2966 |
 | `scripts/archive-done-changes.sh` | 103 | 265 | 2139 | 535 |
 | `scripts/build-dust.sh` | 241 | 754 | 6987 | 1747 |
 | `scripts/devlog.sh` | 71 | 334 | 2426 | 607 |
