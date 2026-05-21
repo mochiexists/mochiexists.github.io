@@ -4,10 +4,10 @@
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
 - Total files: `43`
-- Total lines: `10441`
-- Total words: `31698`
-- Total characters: `321171`
-- Total estimated tokens: `80309`
+- Total lines: `10475`
+- Total words: `31806`
+- Total characters: `322043`
+- Total estimated tokens: `80527`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `3541 / 5000 target`
 
@@ -46,7 +46,7 @@
 | `ovm/api/registry.json` | 31 | 54 | 771 | 193 |
 | `plate/index.html` | 274 | 862 | 15303 | 3826 |
 | `plate/lobster.html` | 280 | 659 | 6614 | 1654 |
-| `records/index.html` | 124 | 502 | 11863 | 2966 |
+| `records/index.html` | 158 | 610 | 12735 | 3184 |
 | `scripts/archive-done-changes.sh` | 103 | 265 | 2139 | 535 |
 | `scripts/build-dust.sh` | 241 | 754 | 6987 | 1747 |
 | `scripts/devlog.sh` | 71 | 334 | 2426 | 607 |
