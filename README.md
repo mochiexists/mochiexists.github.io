@@ -7,10 +7,10 @@ Static site for Mochi. Hosted on GitHub Pages.
 
 - Version: `0.0.1`
 - Files: `43`
-- Lines: `10475`
-- Words: `31806`
-- Characters: `322043`
-- Est. tokens: `80527`
+- Lines: `10485`
+- Words: `31830`
+- Characters: `322292`
+- Est. tokens: `80589`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `3541 / 5000 target`
 

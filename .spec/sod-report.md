@@ -4,10 +4,10 @@
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
 - Total files: `43`
-- Total lines: `10475`
-- Total words: `31806`
-- Total characters: `322043`
-- Total estimated tokens: `80527`
+- Total lines: `10485`
+- Total words: `31830`
+- Total characters: `322292`
+- Total estimated tokens: `80589`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `3541 / 5000 target`
 
@@ -44,7 +44,7 @@
 | `ovm/api/codex.json` | 2859 | 4290 | 58978 | 14745 |
 | `ovm/api/pi.json` | 791 | 1188 | 13264 | 3316 |
 | `ovm/api/registry.json` | 31 | 54 | 771 | 193 |
-| `plate/index.html` | 274 | 862 | 15303 | 3826 |
+| `plate/index.html` | 284 | 886 | 15552 | 3888 |
 | `plate/lobster.html` | 280 | 659 | 6614 | 1654 |
 | `records/index.html` | 158 | 610 | 12735 | 3184 |
 | `scripts/archive-done-changes.sh` | 103 | 265 | 2139 | 535 |
