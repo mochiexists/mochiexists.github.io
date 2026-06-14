@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cmux Mochi — mochi exists</title>
-  <meta name="description" content="cmux Mochi: a fork of cmux with quality-of-life features for agent-driven terminal work.">
+  <meta name="description" content="cmux Mochi: a small set of ergonomic additions on top of cmux for agent-driven terminal work.">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/assets/mochi.css">
   <style>
@@ -49,8 +49,10 @@
     h1.title em { color: var(--accent); font-style: italic; }
     .lede {
       font-size: 1.08rem; line-height: 1.75; color: #b6b6c2;
-      margin: 0 0 0.5rem; max-width: 540px;
+      margin: 0 0 1rem; max-width: 540px;
     }
+    .legend { font-size: 0.85rem; color: #8a8a96; line-height: 1.7; max-width: 540px; }
+    .legend .pill { font-style: normal; }
     .byline { font-size: 0.85rem; color: #6f6f7e; margin: 1.4rem 0 0; letter-spacing: 0.02em; }
     .byline a { color: var(--accent); text-decoration: none; }
     .byline a:hover { color: var(--text-muted); }
@@ -68,10 +70,18 @@
       margin-bottom: 1.7rem; transition: border-color 0.3s ease;
     }
     .feature:hover { border-color: var(--accent); }
+    .feature .head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
     .feature h3 {
       font-size: 1.15rem; font-weight: normal; color: var(--text);
-      letter-spacing: 0.01em; margin-bottom: 0.4rem;
+      letter-spacing: 0.01em; margin: 0;
     }
+    .pill {
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 999px; border: 1px solid #2a2535; white-space: nowrap;
+      position: relative; top: -2px;
+    }
+    .pill.new { color: #8fd6a0; border-color: #2c4434; background: rgba(63,185,80,0.08); }
+    .pill.ext { color: #9aa0c8; border-color: #2a2c44; background: rgba(124,111,156,0.08); }
     .feature p { font-size: 0.97rem; line-height: 1.7; color: #a6a6b2; margin: 0; }
     .feature p .em { color: #c8c8d0; font-style: italic; }
     .feature .how {
@@ -111,8 +121,9 @@
   <article class="post">
     <div class="eyebrow">cmux · the fork</div>
     <h1 class="title">cmux <em>Mochi</em></h1>
-    <p class="lede">A fork of cmux, tuned for living inside agent-driven terminal work — resuming sessions, finding your files, watching the machine, and keeping the browser out of the way.</p>
-    <p class="byline">v0.64.151 · built on current upstream · <a href="https://github.com/mochiexists/cmux-mochi">mochiexists/cmux-mochi</a></p>
+    <p class="lede">A small set of ergonomic additions on top of cmux, for living inside agent-driven terminal work. A few are genuinely new; most are sharper takes on things cmux already does — tagged so you can tell which is which.</p>
+    <p class="legend"><span class="pill new">new</span> doesn't exist upstream &nbsp;·&nbsp; <span class="pill ext">extends cmux</span> builds on an existing cmux feature</p>
+    <p class="byline">v0.64.151 · built on current upstream · <a href="https://github.com/mochiexists/cmux-mochi" target="_blank" rel="noopener noreferrer">mochiexists/cmux-mochi</a></p>
 
     <div class="rule"></div>
 
@@ -120,19 +131,14 @@
       <h2>Agents &amp; sessions</h2>
 
       <div class="feature">
-        <h3>Resume where you left the agent</h3>
-        <p>Quit with Claude or Codex running, and on reopen cmux Mochi <span class="em">pre-types the exact resume command</span> — you press Enter to continue. Or set it to auto-run, or to start fresh. Per-pane and deterministic, so the right session comes back to the right tab.</p>
+        <div class="head"><h3>Choose how an agent resumes</h3><span class="pill ext">extends cmux</span></div>
+        <p>cmux already re-runs an agent's resume command when you reopen. Mochi adds the choice: <span class="em">Medium</span> pre-types the resume command and waits for you to press Enter, <span class="em">Full</span> auto-runs it, <span class="em">Off</span> starts clean — and replays the pane's scrollback so the reopened session reads continuous. Per-pane, so the right session returns to the right tab.</p>
         <span class="how">Settings → Terminal · default <code>Medium</code></span>
       </div>
 
       <div class="feature">
-        <h3>Scrollback that carries over</h3>
-        <p>The restored pane keeps the agent's previous scrollback, so reopening a window looks <span class="em">exactly</span> like you left it instead of a blank shell — even for live TUIs that were never formally detected as an agent.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Codex close-and-resume</h3>
-        <p>Detaching from a Codex thread is treated as a real session end, cleanly staging the resume — and the resume command only appears once Codex has actually saved the session, so a thread you never prompted won't hand you a dead session id.</p>
+        <div class="head"><h3>Codex close-and-resume</h3><span class="pill new">new</span></div>
+        <p>Detaching from a Codex thread is treated as a real session end, cleanly staging the resume — and the command only appears once Codex has actually saved the session, so a thread you never prompted won't hand you a dead session id. (Relies on the Mochi Codex hook.)</p>
       </div>
     </div>
 
@@ -140,25 +146,19 @@
       <h2>Tabs &amp; navigation</h2>
 
       <div class="feature">
-        <h3>Reveal in Finder · Copy Path</h3>
-        <p>Right-click any tab. A terminal reveals its working directory, a markdown pane reveals the file, and a browser on a local <code>file://</code> page reveals that file — selected in Finder, not just its folder.</p>
+        <div class="head"><h3>Reveal in Finder · Copy Path, on a tab</h3><span class="pill ext">extends cmux</span></div>
+        <p>cmux can reveal paths in Finder; Mochi puts <span class="em">Reveal in Finder</span> and <span class="em">Copy Path</span> on the surface tabs themselves — a terminal reveals its working directory, a markdown pane reveals the file, and a browser on a local <code>file://</code> page reveals that file, selected in Finder.</p>
         <span class="how">right-click tab → <code>Reveal in Finder</code></span>
       </div>
 
       <div class="feature">
-        <h3>Reopen Closed Tab — with its scrollback</h3>
-        <p>An accidental close comes back as the tab you actually had: its scrollback and last command restored, not an empty pane in the same slot.</p>
-        <span class="how"><code>⌘⇧T</code></span>
+        <div class="head"><h3>Reopen Closed Tab, with its scrollback</h3><span class="pill ext">extends cmux</span></div>
+        <p>cmux reopens closed items; Mochi restores the closed tab's <span class="em">scrollback and last command</span> too, so it comes back as the tab you actually had rather than an empty pane in the same slot.</p>
       </div>
 
       <div class="feature">
-        <h3>Sidebar spring-load</h3>
-        <p>Drag a session onto a collapsed workspace and it opens immediately, so you can drop the session right where it belongs — no pre-navigating.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Confirm before you quit everything</h3>
-        <p>A tab-close that would take down the last pane and the whole window asks first. One stray <code>⌘W</code> can't end the session.</p>
+        <div class="head"><h3>Sidebar spring-load</h3><span class="pill new">new</span></div>
+        <p>Drag a session onto a collapsed workspace in the sidebar and it opens immediately, so you can drop the session right where it belongs — no pre-navigating.</p>
       </div>
     </div>
 
@@ -166,13 +166,13 @@
       <h2>Monitoring</h2>
 
       <div class="feature">
-        <h3>A real Task Manager</h3>
-        <p>Open it as a tab or a full-area page, with <span class="em">per-process</span> CPU and memory — so when an agent or a build pegs the machine, you can see exactly what's responsible without leaving cmux.</p>
+        <div class="head"><h3>Task Manager as a tab or full page</h3><span class="pill ext">extends cmux</span></div>
+        <p>cmux already has the task manager; Mochi makes it openable as a normal <span class="em">tab</span> or a dedicated <span class="em">full-area page</span> — so process detail lives where you're working instead of only in a menu.</p>
       </div>
 
       <div class="feature">
-        <h3>Always-on CPU &amp; memory footer</h3>
-        <p>A persistent system-load readout pinned in the sidebar footer. Ambient, always there, catching the spike before you go looking for it.</p>
+        <div class="head"><h3>Always-on CPU &amp; memory footer</h3><span class="pill new">new</span></div>
+        <p>A persistent CPU and memory readout pinned in the sidebar footer. Ambient, always there, catching the spike before you go looking for it.</p>
       </div>
     </div>
 
@@ -180,14 +180,15 @@
       <h2>Browser</h2>
 
       <div class="feature">
-        <h3>One switch for "open it externally"</h3>
-        <p>Right-click the New Browser button and flip <span class="em">Open in External Browser</span>. It drives the global in-app-browser setting, so every web open — the button, an agent or CLI running <code>open</code>, a ⌘-clicked link — goes to your system browser. One control, not two that disagree.</p>
+        <div class="head"><h3>One-click "open externally"</h3><span class="pill ext">extends cmux</span></div>
+        <p>cmux can already route web opens to your system browser when the in-app browser is off. Mochi adds a right-click <span class="em">Open in External Browser</span> toggle on the New Browser button — with a button glow — so it's one obvious control instead of a setting you have to go find.</p>
+        <span class="how">right-click New Browser → <code>Open in External Browser</code></span>
       </div>
     </div>
 
     <div class="rule"></div>
 
-    <p class="closing">Each of these is a self-contained change on top of current upstream cmux — written to be offered back. If your team uses cmux and any of it looks useful, it's yours: <a href="https://github.com/mochiexists/cmux-mochi">mochiexists/cmux-mochi</a>.</p>
+    <p class="closing">Each item is a self-contained change on top of current upstream cmux, written to be offered back. If your team uses cmux and any of it looks useful — new or extension — it's yours: <a href="https://github.com/mochiexists/cmux-mochi" target="_blank" rel="noopener noreferrer">mochiexists/cmux-mochi</a>.</p>
   </article>
 
   <div class="frequency">528 Hz</div>
