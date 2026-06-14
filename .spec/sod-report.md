@@ -4,10 +4,10 @@
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
 - Total files: `43`
-- Total lines: `10485`
-- Total words: `31830`
-- Total characters: `322292`
-- Total estimated tokens: `80589`
+- Total lines: `10486`
+- Total words: `31832`
+- Total characters: `322321`
+- Total estimated tokens: `80596`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `3541 / 5000 target`
 
@@ -39,7 +39,7 @@
 | `cats/index.html` | 96 | 290 | 4097 | 1025 |
 | `docs/dust.html` | 701 | 5280 | 51082 | 12771 |
 | `dust/index.html` | 264 | 617 | 6272 | 1568 |
-| `index.html` | 137 | 297 | 3238 | 810 |
+| `index.html` | 138 | 299 | 3267 | 817 |
 | `ovm/api/claude.json` | 1533 | 2303 | 25748 | 6437 |
 | `ovm/api/codex.json` | 2859 | 4290 | 58978 | 14745 |
 | `ovm/api/pi.json` | 791 | 1188 | 13264 | 3316 |
