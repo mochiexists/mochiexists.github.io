@@ -133,9 +133,14 @@
       <h2>Agents &amp; sessions</h2>
 
       <div class="feature">
-        <div class="head"><h3>Choose how an agent resumes</h3><span class="pill ext">extends cmux</span></div>
-        <p>cmux already re-runs an agent's resume command when you reopen. Mochi adds the choice: <span class="em">Medium</span> pre-types the resume command and waits for you to press Enter, <span class="em">Full</span> auto-runs it, <span class="em">Off</span> starts clean — and replays the pane's scrollback so the reopened session reads continuous. Per-pane, so the right session returns to the right tab.</p>
+        <div class="head"><h3>Resume mode — you choose how</h3><span class="pill ext">extends cmux</span></div>
+        <p>cmux already re-runs an agent's resume command on reopen. Mochi adds a setting: <span class="em">Medium</span> (the default) pre-types the resume command and waits for you to submit it — so reopening puts the command in front of you to run, rather than auto-running. <span class="em">Full</span> auto-runs it, <span class="em">Off</span> starts clean. Per-pane, so the right session returns to the right tab.</p>
         <span class="how">Settings → Terminal · default <code>Medium</code></span>
+      </div>
+
+      <div class="feature">
+        <div class="head"><h3>Scrollback that persists across quits and crashes</h3><span class="pill ext">extends cmux</span></div>
+        <p>A restored pane keeps its previous scrollback, so reopening a window — after a clean quit <span class="em">or a crash</span> — looks exactly like you left it instead of a blank shell, even for live TUIs that were never formally detected as an agent.</p>
       </div>
 
       <div class="feature">
