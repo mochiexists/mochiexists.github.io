@@ -145,7 +145,7 @@
 
       <div class="feature">
         <div class="head"><h3>Codex close-and-resume</h3><span class="pill new">new</span></div>
-        <p>Detaching from a Codex thread is treated as a real session end, cleanly staging the resume — and the command only appears once Codex has actually saved the session, so a thread you never prompted won't hand you a dead session id.</p>
+        <p>Detaching from a Codex thread now fires a real end-of-session signal, so closing it stages the resume command the same way quitting a Claude session does. And that command is only staged once Codex has actually written the session to disk — open a thread, never prompt it, and you won't be handed a resume that points at a session id that was never saved.</p>
         <span class="how">depends on the <a href="https://github.com/mochiexists/codex" target="_blank" rel="noopener noreferrer">Mochi Codex fork</a> (adds the <code>ThreadUnsubscribe</code> hook event) — lands cleanly if that merges upstream into Codex</span>
       </div>
     </div>
