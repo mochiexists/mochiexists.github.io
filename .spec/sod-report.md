@@ -4,10 +4,10 @@
 - Scope: Git-tracked text files when Git metadata is available; fallback to repo file scan otherwise
 - Token estimate: `ceil(characters / 4)`
 - Total files: `45`
-- Total lines: `10768`
-- Total words: `33348`
-- Total characters: `335866`
-- Total estimated tokens: `83983`
+- Total lines: `10771`
+- Total words: `33389`
+- Total characters: `336282`
+- Total estimated tokens: `84087`
 - bootstrap sod: `2350 / 3000 target`
 - operational sod: `3541 / 5000 target`
 
@@ -36,7 +36,7 @@
 | `VERSION` | 1 | 1 | 6 | 2 |
 | `assets/mochi.css` | 37 | 131 | 953 | 239 |
 | `assets/repel.js` | 87 | 268 | 2348 | 587 |
-| `blog/cmux-mochi/index.html` | 203 | 1152 | 10163 | 2541 |
+| `blog/cmux-mochi/index.html` | 206 | 1193 | 10579 | 2645 |
 | `blog/index.html` | 79 | 364 | 3382 | 846 |
 | `cats/index.html` | 96 | 290 | 4097 | 1025 |
 | `docs/dust.html` | 701 | 5280 | 51082 | 12771 |

@@ -92,6 +92,8 @@
       font-family: 'Georgia', serif; color: var(--accent); background: rgba(124,111,156,0.10);
       border: 1px solid #2a2535; border-radius: 5px; padding: 1px 7px; font-style: normal;
     }
+    .feature .how a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #3a3450; }
+    .feature .how a:hover { color: var(--text-muted); border-color: var(--accent); }
 
     .closing {
       margin-top: 3rem; font-size: 0.98rem; line-height: 1.8; color: #9999a5;
@@ -138,7 +140,8 @@
 
       <div class="feature">
         <div class="head"><h3>Codex close-and-resume</h3><span class="pill new">new</span></div>
-        <p>Detaching from a Codex thread is treated as a real session end, cleanly staging the resume — and the command only appears once Codex has actually saved the session, so a thread you never prompted won't hand you a dead session id. (Relies on the Mochi Codex hook.)</p>
+        <p>Detaching from a Codex thread is treated as a real session end, cleanly staging the resume — and the command only appears once Codex has actually saved the session, so a thread you never prompted won't hand you a dead session id.</p>
+        <span class="how">depends on the <a href="https://github.com/mochiexists/codex" target="_blank" rel="noopener noreferrer">Mochi Codex fork</a> (adds the <code>ThreadUnsubscribe</code> hook event) — lands cleanly if that merges upstream into Codex</span>
       </div>
     </div>
 
