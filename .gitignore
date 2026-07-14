@@ -9,3 +9,6 @@
 # Editor
 *.swp
 *~
+
+# Nested repo: mochiexists/yolo lives here locally, published from its own repo
+yolo/
