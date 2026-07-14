@@ -2,33 +2,13 @@
 
 Static site for Mochi. Hosted on GitHub Pages.
 
-<!-- sod-summary:start -->
-## sod
-
-- Version: `0.0.1`
-- Files: `45`
-- Lines: `10776`
-- Words: `33452`
-- Characters: `336732`
-- Est. tokens: `84200`
-- bootstrap sod: `2350 / 3000 target`
-- operational sod: `3541 / 5000 target`
-
-See `.spec/sod-report.md` for the full per-file breakdown.
-<!-- sod-summary:end -->
-
 ## Pages
 
 - `/` — Home (Mochi exists)
+- `/blog` — Blog
 - `/dust` — spec-of-dust promo
 - `/plate` — Mochi plate product
+- `/records` — Mochi records
 - `/story` — Story page
-- `/yolo` — Yolo
-
-## Development
-
-This project uses [spec-of-dust](https://github.com/mochiexists/spec-of-dust) for workflow management.
-
-```
-bash scripts/update-sod-report.sh   # refresh repo metrics
-```
+- `/cats` — Ina & Doug (linked from /story)
+- `/yolo` — claude --yolo (served from the separate [mochiexists/yolo](https://github.com/mochiexists/yolo) repo)
