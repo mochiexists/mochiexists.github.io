@@ -14,6 +14,7 @@
   <meta property="og:image" content="https://mochiexists.com/assets/og-mochi.jpg">
   <meta name="twitter:card" content="summary">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/mochi.css">
   <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,37 +33,9 @@
       padding: 3rem 2rem;
     }
 
-    .glow {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(124, 111, 156, 0.15) 0%, transparent 70%);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s ease;
-      z-index: 0;
-    }
 
-    .home-link {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      z-index: 10;
-      opacity: 0.35;
-      transition: opacity 0.4s, transform 0.4s;
-    }
 
-    .home-link:hover {
-      opacity: 0.85;
-      transform: scale(1.08);
-    }
 
-    .home-link img {
-      width: 48px;
-      height: auto;
-      filter: drop-shadow(0 0 12px rgba(124, 111, 156, 0.3));
-    }
 
     .content {
       max-width: 580px;
@@ -106,14 +79,6 @@
       margin-bottom: 2.5rem;
     }
 
-    .frequency {
-      position: fixed;
-      bottom: 1rem;
-      font-size: 0.7rem;
-      opacity: 0.2;
-      letter-spacing: 0.2em;
-      z-index: 1;
-    }
 
     @media (max-width: 500px) {
       .content h1 { font-size: 1.5rem; }
@@ -153,14 +118,6 @@
 
   <div class="frequency">528 Hz</div>
 
-  <script>
-    const glow = document.getElementById('glow');
-    document.addEventListener('mousemove', (e) => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    });
-    document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
-    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
-  </script>
+  <script src="/assets/glow.js" defer></script>
 </body>
 </html>

@@ -14,14 +14,19 @@
   <meta property="og:image" content="https://mochiexists.com/assets/og-lobster.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/mochi.css">
   <style>
+    :root { --glow-color: rgba(156, 111, 111, 0.15); }
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html { overflow-x: hidden; }
 
     body {
       min-height: 100vh;
-      background: #0a0a0f;
+      background:
+        radial-gradient(ellipse 120% 60% at 50% -10%, rgba(156, 111, 111, 0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 50% at 50% 110%, rgba(124, 111, 156, 0.05) 0%, transparent 60%),
+        #0a0a0f;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,37 +35,9 @@
       padding: 3rem 2rem;
     }
 
-    .glow {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(156, 111, 111, 0.15) 0%, transparent 70%);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s ease;
-      z-index: 0;
-    }
 
-    .home-link {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      z-index: 10;
-      opacity: 0.35;
-      transition: opacity 0.4s, transform 0.4s;
-    }
 
-    .home-link:hover {
-      opacity: 0.85;
-      transform: scale(1.08);
-    }
 
-    .home-link img {
-      width: 48px;
-      height: auto;
-      filter: drop-shadow(0 0 12px rgba(124, 111, 156, 0.3));
-    }
 
     .product {
       max-width: 580px;
@@ -75,7 +52,6 @@
       max-width: 380px;
       display: block;
       margin: 0 auto 2.5rem;
-      animation: breathe 8s ease-in-out infinite;
     }
 
     .plate-image img {
@@ -85,10 +61,6 @@
       filter: drop-shadow(0 0 40px rgba(156, 111, 111, 0.3));
     }
 
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-    }
 
     .details {
       text-align: center;
@@ -215,14 +187,6 @@
       color: #c8c8d0;
     }
 
-    .frequency {
-      position: fixed;
-      bottom: 1rem;
-      font-size: 0.7rem;
-      opacity: 0.2;
-      letter-spacing: 0.2em;
-      z-index: 1;
-    }
 
     @media (max-width: 500px) {
       .details h1 { font-size: 1.4rem; }
@@ -230,7 +194,7 @@
     }
   </style>
 </head>
-<body>
+<body class="grain">
   <div class="glow" id="glow"></div>
 
   <a href="/" class="home-link" title="home">
@@ -238,51 +202,43 @@
   </a>
 
   <div class="product">
-    <div class="plate-image">
-      <img src="/assets/lobster-plate.webp" width="760" height="760" alt="A vintage bone china plate with a lobster print. Text reads: The World Is Your Lobster.">
+    <div class="plate-image reveal reveal-1">
+      <img class="breathe" src="/assets/lobster-plate.webp" width="760" height="760" alt="A vintage bone china plate with a lobster print. Text reads: The World Is Your Lobster.">
     </div>
 
     <div class="details">
-      <h1>the lobster plate</h1>
-      <p class="subtitle">vintage bone china, hand-decorated</p>
+      <h1 class="reveal reveal-2">the lobster plate</h1>
+      <p class="subtitle reveal reveal-3">vintage bone china, hand-decorated</p>
 
-      <p class="description">
+      <p class="description reveal reveal-4">
         "The world is your lobster." A vintage lobster print applied to a
         blue and gold-edged bone china plate. Each piece is handcrafted
         by Stokes Croft China in Bristol &mdash; no two are exactly alike.
       </p>
 
-      <p class="specs">27cm &middot; fine bone china &middot; dishwasher safe &middot; food safe</p>
+      <p class="specs reveal reveal-4">27cm &middot; fine bone china &middot; dishwasher safe &middot; food safe</p>
 
-      <p class="price">
+      <p class="price reveal reveal-5">
         &pound;35
         <span class="note">+ shipping</span>
       </p>
 
-      <a href="https://www.prscshop.co.uk/products/the-world-is-your-lobster-half-moon-dish" class="buy-btn" target="_blank" rel="noopener">get one</a>
+      <a href="https://www.prscshop.co.uk/products/the-world-is-your-lobster-half-moon-dish" class="buy-btn reveal reveal-6" target="_blank" rel="noopener">get one</a>
 
-      <p class="shipping-note">ships from Bristol, UK</p>
+      <p class="shipping-note reveal reveal-6">ships from Bristol, UK</p>
     </div>
 
-    <div class="divider"></div>
+    <div class="divider reveal reveal-7"></div>
 
-    <p class="footer-note">
+    <p class="footer-note reveal reveal-7">
       Made to order. Allow 3&ndash;5 working days, up to 3 weeks during busy periods.
     </p>
 
-    <a href="/plate" class="back-link">&larr; back to the mochi plate</a>
+    <a href="/plate" class="back-link reveal reveal-7">&larr; back to the mochi plate</a>
   </div>
 
   <div class="frequency">528 Hz</div>
 
-  <script>
-    const glow = document.getElementById('glow');
-    document.addEventListener('mousemove', (e) => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    });
-    document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
-    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
-  </script>
+  <script src="/assets/glow.js" defer></script>
 </body>
 </html>

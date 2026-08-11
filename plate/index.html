@@ -14,6 +14,24 @@
   <meta property="og:image" content="https://mochiexists.com/assets/og-plate.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/mochi.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "The Mochi Plate",
+    "description": "Printed ceramic plate, kiln-fired. No two are exactly alike. Made to order as part of a custom batch.",
+    "image": "https://mochiexists.com/assets/og-plate.jpg",
+    "url": "https://mochiexists.com/plate/",
+    "offers": {
+      "@type": "Offer",
+      "price": "45.00",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/MadeToOrder",
+      "url": "https://mochiexists.com/plate/"
+    }
+  }
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -33,67 +51,13 @@
       padding: 3rem 2rem;
     }
 
-    /* film grain */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 2;
-      opacity: 0.05;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
-    .reveal { animation: fadeUp 0.9s ease-out both; }
-    .reveal-1 { animation-delay: 0.1s; }
-    .reveal-2 { animation-delay: 0.25s; }
-    .reveal-3 { animation-delay: 0.4s; }
-    .reveal-4 { animation-delay: 0.55s; }
-    .reveal-5 { animation-delay: 0.7s; }
-    .reveal-6 { animation-delay: 0.85s; }
-    .reveal-7 { animation-delay: 1.05s; }
 
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { animation: none; }
-      .plate-image img { animation: none; }
-    }
 
-    .glow {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(124, 111, 156, 0.15) 0%, transparent 70%);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s ease;
-      z-index: 0;
-    }
 
-    .home-link {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      z-index: 10;
-      opacity: 0.35;
-      transition: opacity 0.4s, transform 0.4s;
-    }
 
-    .home-link:hover {
-      opacity: 0.85;
-      transform: scale(1.08);
-    }
 
-    .home-link img {
-      width: 48px;
-      height: auto;
-      filter: drop-shadow(0 0 12px rgba(124, 111, 156, 0.3));
-    }
 
     .product {
       max-width: 580px;
@@ -115,7 +79,6 @@
       height: auto;
       border-radius: 0;
       filter: drop-shadow(0 0 40px rgba(124, 111, 156, 0.3));
-      animation: breathe 8s ease-in-out infinite;
       transition: filter 0.6s ease;
     }
 
@@ -123,10 +86,6 @@
       filter: drop-shadow(0 0 55px rgba(124, 111, 156, 0.45));
     }
 
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-    }
 
     .details {
       text-align: center;
@@ -250,14 +209,6 @@
       color: #c8c8d0;
     }
 
-    .frequency {
-      position: fixed;
-      bottom: 1rem;
-      font-size: 0.7rem;
-      opacity: 0.2;
-      letter-spacing: 0.2em;
-      z-index: 1;
-    }
 
     @media (max-width: 500px) {
       .details h1 { font-size: 1.4rem; }
@@ -265,7 +216,7 @@
     }
   </style>
 </head>
-<body>
+<body class="grain">
   <div class="glow" id="glow"></div>
 
   <a href="/" class="home-link" title="home">
@@ -274,7 +225,7 @@
 
   <div class="product">
     <div class="plate-image reveal reveal-1">
-      <img src="/assets/mochi-plate-v1.webp" width="640" height="350" alt="A ceramic plate with a purple cat printed in the center. Text reads: This is Mochi. They exist.">
+      <img class="breathe" src="/assets/mochi-plate-v1.webp" width="640" height="350" alt="A ceramic plate with a purple cat printed in the center. Text reads: This is Mochi. They exist.">
     </div>
 
     <div class="details">
@@ -311,14 +262,6 @@
 
   <div class="frequency">528 Hz</div>
 
-  <script>
-    const glow = document.getElementById('glow');
-    document.addEventListener('mousemove', (e) => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    });
-    document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
-    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
-  </script>
+  <script src="/assets/glow.js" defer></script>
 </body>
 </html>
