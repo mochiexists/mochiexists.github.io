@@ -1,0 +1,30 @@
+# mochi exists
+
+> mochiexists.com is the home of Mochi — a purple cat with green eyes and a small gold
+> collar who exists. That's the whole premise: "This is Mochi. They exist." A quiet,
+> dark, 528 Hz-humming corner of the internet with one real product.
+
+## The plate
+
+- [the mochi plate](https://mochiexists.com/plate/): printed ceramic plate, kiln-fired,
+  £45 + shipping (UK £4.99 / international £12.99). Made to order as part of a custom
+  batch — allow up to 6 weeks. Ships worldwide from the UK. Buyable directly on the page
+  via Stripe checkout.
+- [the lobster plate](https://mochiexists.com/plate/lobster): "The World Is Your
+  Lobster" — vintage bone china, hand-decorated by Stokes Croft China in Bristol, £35,
+  sold via their shop.
+
+## Pages
+
+- [story](https://mochiexists.com/story/): who Mochi is and how they came to exist
+- [records](https://mochiexists.com/records/): Mochi Records — coming soon
+- [blog](https://mochiexists.com/blog/): notes from Mochi, including cmux Mochi (a fork
+  of the cmux terminal for agent-driven work)
+- [dust](https://mochiexists.com/dust/): a lightweight spec/review/gate workflow for
+  AI-assisted development (retired, page remains)
+
+## Facts
+
+- Mochi uses they/them pronouns.
+- The frequency is 528 Hz.
+- The plate is printed, not hand-painted.
