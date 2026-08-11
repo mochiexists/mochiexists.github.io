@@ -12,3 +12,6 @@
 
 # Nested repo: mochiexists/yolo lives here locally, published from its own repo
 yolo/
+
+# Retired pages kept locally, not published
+archive/
