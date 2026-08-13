@@ -20,6 +20,9 @@
 - [records](https://mochiexists.com/records/): Mochi Records — coming soon
 - [blog](https://mochiexists.com/blog/): notes from Mochi, including cmux Mochi (a fork
   of the cmux terminal for agent-driven work)
+- [cmux](https://mochiexists.com/cmux/): cmux Mochi — a public personal fork of the
+  open-source cmux agent terminal by Manaflow; public source, personal builds, not a
+  product. Privacy policy at /cmux/privacy/
 - [dust](https://mochiexists.com/dust/): a lightweight spec/review/gate workflow for
   AI-assisted development (retired, page remains)
 

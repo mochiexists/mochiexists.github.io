@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cmux Mochi</title>
+  <meta name="description" content="cmux Mochi is a public personal fork of cmux, the open-source agent terminal by Manaflow. Source is public; builds are personal, not a product.">
+  <link rel="canonical" href="https://mochiexists.com/cmux/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="mochi exists">
+  <meta property="og:title" content="cmux Mochi">
+  <meta property="og:description" content="A public personal fork of cmux, the open-source agent terminal by Manaflow. Source is public; builds are personal, not a product.">
+  <meta property="og:url" content="https://mochiexists.com/cmux/">
+  <meta property="og:image" content="https://mochiexists.com/assets/og-mochi.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/mochi.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { overflow-x: hidden; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(124, 111, 156, 0.1), transparent 40%),
+        #0a0a0f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Georgia', serif;
+      color: #c8c8d0;
+      padding: 3rem 2rem;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 640px;
+      margin: auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #7c6f9c;
+      opacity: 0.72;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: lowercase;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 10vw, 4.7rem);
+      font-weight: normal;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: #a4a4af;
+      max-width: 36rem;
+      margin-bottom: 2rem;
+    }
+
+    .panel {
+      background: rgba(124, 111, 156, 0.07);
+      border: 1px solid rgba(124, 111, 156, 0.18);
+      border-radius: 18px;
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 0 40px rgba(124, 111, 156, 0.07);
+      backdrop-filter: blur(8px);
+      margin-bottom: 1.2rem;
+    }
+
+    .flow {
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      color: #d4d4dc;
+      text-transform: lowercase;
+      margin-bottom: 0.9rem;
+    }
+
+    .panel p {
+      color: #9a9aa6;
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+
+    .panel p + p {
+      margin-top: 0.8rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .card {
+      padding: 1rem 1.05rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(124, 111, 156, 0.14);
+    }
+
+    .card h2 {
+      font-size: 0.82rem;
+      font-weight: normal;
+      color: #7c6f9c;
+      letter-spacing: 0.16em;
+      text-transform: lowercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .card p {
+      color: #9a9aa6;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .quiet {
+      color: #848490;
+      font-style: italic;
+      line-height: 1.75;
+      font-size: 0.92rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.6rem;
+      margin-top: 2rem;
+    }
+
+    .links a {
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      opacity: 0.68;
+      text-transform: lowercase;
+    }
+
+    @media (max-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      body {
+        padding: 2.6rem 1.2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" id="glow"></div>
+
+  <a href="/" class="home-link" title="home">
+    <img src="/assets/mochi-small.webp" alt="mochi" width="96" height="111">
+  </a>
+
+  <main class="page">
+    <span class="eyebrow">the fork</span>
+    <h1 class="repel">cmux Mochi</h1>
+
+    <p class="subtitle">
+      A public personal fork of <a href="https://cmux.com">cmux</a>, the
+      open-source agent terminal by Manaflow — carrying a small set of
+      ergonomic additions for living inside agent-driven terminal work.
+    </p>
+
+    <section class="panel">
+      <div class="flow">public source · personal builds</div>
+      <p>
+        The source is public and the changes are documented, but this is not a
+        product. Builds are signed and distributed for personal use and
+        small-circle testing only — a macOS app updated from this fork's own
+        release feed, and an iOS companion that lives on TestFlight by
+        invitation. It is not intended for general distribution.
+      </p>
+      <p>
+        If you want cmux itself, get it from the source: the upstream project
+        at <a href="https://cmux.com">cmux.com</a> is the real thing, and
+        everything here builds on it.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="cmux Mochi details">
+      <article class="card">
+        <h2>what changes</h2>
+        <p>Resume-mode control, persistent scrollback, Codex close-and-resume, and other small sharpenings — the full tour is on the <a href="/blog/cmux-mochi/">blog</a>.</p>
+      </article>
+
+      <article class="card">
+        <h2>upstream</h2>
+        <p>cmux is an open-source project by <a href="https://github.com/manaflow-ai/cmux">Manaflow</a>. This fork tracks it closely and stays rebased on current releases.</p>
+      </article>
+
+      <article class="card">
+        <h2>source</h2>
+        <p>The fork lives at <a href="https://github.com/mochiexists/cmux-mochi">mochiexists/cmux-mochi</a>, same license as upstream.</p>
+      </article>
+
+      <article class="card">
+        <h2>privacy</h2>
+        <p>What the personal builds do and don't send is written down plainly in the <a href="/cmux/privacy/">privacy policy</a>.</p>
+      </article>
+    </section>
+
+    <p class="quiet">
+      cmux Mochi is unaffiliated with and unendorsed by Manaflow. The name
+      cmux belongs to the upstream project; the Mochi belongs to Mochi.
+    </p>
+
+    <nav class="links">
+      <a href="/">home</a>
+      <a href="/blog/cmux-mochi/">the changes</a>
+      <a href="/cmux/privacy/">privacy</a>
+      <a href="https://github.com/mochiexists/cmux-mochi">github</a>
+    </nav>
+  </main>
+
+  <div class="frequency">528 Hz</div>
+
+  <script src="/assets/glow.js" defer></script>
+  <script src="/assets/repel.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cmux Mochi — privacy policy</title>
+  <meta name="description" content="Privacy policy for cmux Mochi, a public personal fork of the open-source cmux agent terminal. What the personal builds send, what stays on your devices.">
+  <link rel="canonical" href="https://mochiexists.com/cmux/privacy/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="mochi exists">
+  <meta property="og:title" content="cmux Mochi — privacy policy">
+  <meta property="og:description" content="What the cmux Mochi personal builds send, and what stays on your devices.">
+  <meta property="og:url" content="https://mochiexists.com/cmux/privacy/">
+  <meta property="og:image" content="https://mochiexists.com/assets/og-mochi.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/mochi.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { overflow-x: hidden; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(124, 111, 156, 0.1), transparent 40%),
+        #0a0a0f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Georgia', serif;
+      color: #c8c8d0;
+      padding: 3rem 2rem;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 640px;
+      margin: auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #7c6f9c;
+      opacity: 0.72;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: lowercase;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 3.2rem);
+      font-weight: normal;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 0.8rem;
+    }
+
+    .updated {
+      color: #848490;
+      font-size: 0.88rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .intro {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: #a4a4af;
+      margin-bottom: 2.2rem;
+    }
+
+    .intro p + p {
+      margin-top: 0.9rem;
+    }
+
+    section {
+      margin-bottom: 2.1rem;
+    }
+
+    h2 {
+      font-size: 0.86rem;
+      font-weight: normal;
+      color: #7c6f9c;
+      letter-spacing: 0.16em;
+      text-transform: lowercase;
+      margin-bottom: 0.8rem;
+    }
+
+    section p {
+      color: #9a9aa6;
+      line-height: 1.78;
+      font-size: 0.95rem;
+    }
+
+    section p + p,
+    section ul + p,
+    section p + ul {
+      margin-top: 0.8rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      color: #9a9aa6;
+      line-height: 1.78;
+      font-size: 0.95rem;
+      padding-left: 1.1rem;
+      position: relative;
+      margin-bottom: 0.45rem;
+    }
+
+    li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #7c6f9c;
+    }
+
+    li strong {
+      color: #b6b6c0;
+      font-weight: normal;
+    }
+
+    .quiet {
+      color: #848490;
+      font-style: italic;
+      line-height: 1.75;
+      font-size: 0.92rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.6rem;
+      margin-top: 2.4rem;
+    }
+
+    .links a {
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      opacity: 0.68;
+      text-transform: lowercase;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 2.6rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" id="glow"></div>
+
+  <a href="/" class="home-link" title="home">
+    <img src="/assets/mochi-small.webp" alt="mochi" width="96" height="111">
+  </a>
+
+  <main class="page">
+    <span class="eyebrow">cmux mochi</span>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: August 13, 2026</p>
+
+    <div class="intro">
+      <p>
+        This policy covers the <a href="/cmux/">cmux Mochi</a> applications —
+        a macOS app and an iPhone/iPad companion — distributed as personal
+        builds of a public fork of the open-source
+        <a href="https://cmux.com">cmux</a> project by Manaflow. The apps are
+        operated by Mochi ("we") for personal use and invited testing, not as
+        a commercial service. This policy applies to builds distributed from
+        this fork; upstream cmux has its own
+        <a href="https://cmux.com/privacy-policy">privacy policy</a>.
+      </p>
+      <p>
+        The short version: your terminal content stays on your own devices,
+        nothing is sold or shared for marketing, and the little that does
+        leave your machine exists to keep the apps working.
+      </p>
+    </div>
+
+    <section>
+      <h2>what stays on your devices</h2>
+      <p>
+        Terminal sessions, scrollback, commands, files, and agent
+        conversations live on your Mac. When the iPhone/iPad app is paired
+        with a Mac, terminal content travels between your own devices over
+        encrypted connections; we do not run servers that store your terminal
+        content.
+      </p>
+    </section>
+
+    <section>
+      <h2>what the apps may send</h2>
+      <ul>
+        <li><strong>Crash reports and diagnostics</strong> — error logs, stack traces, device model, and OS version, sent to our Sentry project when something breaks, used only to fix it.</li>
+        <li><strong>Update checks (macOS)</strong> — the macOS app checks a GitHub-hosted Sparkle feed for new builds, which involves sending the app and OS version as part of an ordinary web request to GitHub. The iOS app updates through TestFlight and the App Store instead.</li>
+        <li><strong>Sign-in</strong> — if you sign in, authentication is handled through Stack Auth and the sign-in provider you choose, which share your email address and an account identifier with the app.</li>
+        <li><strong>Pairing metadata</strong> — pairing the mobile app with a Mac processes device names, identifiers, and connection metadata needed to link your devices to your account.</li>
+        <li><strong>Push notifications (iOS)</strong> — an Apple Push Notification service token, only if you turn notifications on.</li>
+        <li><strong>Product analytics</strong> — the apps inherit upstream cmux's telemetry code, so reliability and feature-usage events (such as launch, sign-in status, and pairing outcomes) may be reported as they are in upstream cmux.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>third-party services</h2>
+      <ul>
+        <li><strong>Sentry</strong> — crash and error reporting.</li>
+        <li><strong>GitHub</strong> — hosts the fork's source, releases, and macOS update feed.</li>
+        <li><strong>Sparkle</strong> — the macOS auto-update framework.</li>
+        <li><strong>Stack Auth, with Apple, Google, or GitHub sign-in</strong> — authentication and account management.</li>
+        <li><strong>Apple</strong> — TestFlight distribution, App Store updates, and push notifications, under Apple's own terms.</li>
+        <li><strong>Ghostty / libghostty</strong> — the terminal-rendering engine, which runs entirely on your device.</li>
+      </ul>
+      <p>Each of these has its own privacy policy that applies to its processing.</p>
+    </section>
+
+    <section>
+      <h2>what we don't do</h2>
+      <p>
+        We do not sell, rent, trade, or share personal information for
+        marketing. There is no advertising. Diagnostics are kept only as long
+        as they are useful for fixing the problem they describe.
+      </p>
+    </section>
+
+    <section>
+      <h2>your rights</h2>
+      <p>
+        You can ask what data exists about you, ask for it to be corrected or
+        deleted, or object to its processing — laws like the GDPR and CCPA may
+        grant these rights formally, and we honor them informally regardless.
+        Write to <a href="mailto:mochiexists528@gmail.com">mochiexists528@gmail.com</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>children</h2>
+      <p>
+        The apps are not directed at anyone under 13, and we do not knowingly
+        collect information from anyone under 13.
+      </p>
+    </section>
+
+    <section>
+      <h2>changes</h2>
+      <p>
+        If this policy changes, the new version appears here with an updated
+        date. Given the size of the audience, you will probably hear about it
+        directly too.
+      </p>
+    </section>
+
+    <p class="quiet">
+      cmux Mochi is unaffiliated with and unendorsed by Manaflow.
+      Questions: <a href="mailto:mochiexists528@gmail.com">mochiexists528@gmail.com</a>.
+    </p>
+
+    <nav class="links">
+      <a href="/">home</a>
+      <a href="/cmux/">cmux mochi</a>
+      <a href="https://github.com/mochiexists/cmux-mochi">github</a>
+    </nav>
+  </main>
+
+  <div class="frequency">528 Hz</div>
+
+  <script src="/assets/glow.js" defer></script>
+</body>
+</html>
