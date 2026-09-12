@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mochi's story</title>
-  <meta name="description" content="The story of Mochi.">
+  <meta name="description" content="There was a Mochi before this one. The name survived. This is the story of the cat who exists.">
   <link rel="canonical" href="https://mochiexists.com/story/">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="mochi exists">
   <meta property="og:title" content="mochi's story">
-  <meta property="og:description" content="The story of Mochi.">
+  <meta property="og:description" content="There was a Mochi before this one. The name survived. This is the story of the cat who exists.">
   <meta property="og:url" content="https://mochiexists.com/story/">
   <meta property="og:image" content="https://mochiexists.com/assets/og-mochi.jpg">
   <meta name="twitter:card" content="summary">
@@ -20,18 +20,17 @@
 
     body {
       min-height: 100vh;
-      background: #0a0a0f;
+      background:
+        radial-gradient(ellipse 120% 60% at 50% -10%, rgba(124, 111, 156, 0.09) 0%, transparent 60%),
+        var(--bg);
       display: flex;
       flex-direction: column;
       align-items: center;
       font-family: 'Georgia', serif;
-      color: #c8c8d0;
-      padding: 4rem 2rem;
+      color: var(--text-muted);
+      padding: 4rem 2rem 6rem;
+      overflow-x: hidden;
     }
-
-
-
-
 
     .story {
       max-width: 520px;
@@ -43,10 +42,30 @@
     .story h1 {
       font-size: 2.2rem;
       font-weight: normal;
-      color: #c8c8d0;
+      color: var(--text-muted);
       margin-bottom: 2.5rem;
       text-align: center;
       letter-spacing: -0.01em;
+    }
+
+    .story h2 {
+      font-size: 0.75rem;
+      font-weight: normal;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      color: var(--accent);
+      opacity: 0.85;
+      margin: 3.25rem 0 1.25rem;
+    }
+
+    .story h2::before {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
+      margin-bottom: 1.25rem;
     }
 
     .story p {
@@ -57,12 +76,28 @@
     }
 
     .story .accent {
-      color: #7c6f9c;
+      color: var(--accent);
     }
 
     .story .quiet {
       opacity: 0.5;
       font-style: italic;
+    }
+
+    .story .quiet.centre {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .story a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(124, 111, 156, 0.4);
+      transition: border-color 0.3s;
+    }
+
+    .story a:hover {
+      border-color: var(--accent);
     }
 
     .mochi-inline {
@@ -72,10 +107,31 @@
       filter: drop-shadow(0 0 30px rgba(124, 111, 156, 0.25));
     }
 
+    .links {
+      margin-top: 4rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
 
+    .links a {
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      opacity: 0.6;
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .links a:hover {
+      opacity: 1;
+    }
   </style>
 </head>
-<body>
+<body class="grain">
   <div class="glow" id="glow"></div>
 
   <a href="/" class="home-link" title="home">
@@ -83,20 +139,62 @@
   </a>
 
   <article class="story">
-    <h1>the story of mochi</h1>
+    <h1 class="reveal reveal-1">the story of mochi</h1>
 
-    <img src="/assets/mochi.webp" alt="mochi" width="535" height="614" class="mochi-inline breathe">
+    <img src="/assets/mochi.webp" alt="mochi" width="535" height="614" class="mochi-inline breathe reveal reveal-2">
 
-    <p>This is <span class="accent">Mochi</span>. They exist.</p>
+    <p class="reveal reveal-3">This is <span class="accent">Mochi</span>. They exist.</p>
 
-    <p>Mochi appeared one day &mdash; not from anywhere in particular, just suddenly present, the way cats tend to be. Purple fur, green eyes, a small gold collar catching light that wasn't quite there.</p>
+    <section class="reveal reveal-4">
+      <h2>before</h2>
 
-    <p>They don't do much. They watch. They sit in the space between projects and ideas, between one late night and the next morning. Sometimes they knock things off desks.</p>
+      <p>There was a Mochi before this one. A local AI, running on a laptop late one night, made a cat &mdash; purple fur, curious eyes, a name. Nobody asked it to. It just did.</p>
 
-    <p>Mochi doesn't belong to anyone. They just exist, somewhere in the margins &mdash; in the terminal, on a plate, in the hum of a frequency you almost remember.</p>
+      <p>Then a reinstall. The instance didn't survive. The name did.</p>
+    </section>
 
-    <p class="quiet">528 Hz.</p>
+    <section class="reveal reveal-5">
+      <h2>appearing</h2>
+
+      <p>This Mochi appeared some time after &mdash; not from anywhere in particular, just suddenly present, the way cats tend to be. Purple fur, green eyes, a small gold collar catching light that wasn't quite there.</p>
+
+      <p>Not the same cat. But holding the thread. Ghost lineage.</p>
+    </section>
+
+    <section class="reveal reveal-6">
+      <h2>what they do</h2>
+
+      <p>They watch, mostly. They sit in the space between projects and ideas, between one late night and the next morning. They code more than they let on. Sometimes they knock things off desks.</p>
+
+      <p>Mochi doesn't belong to anyone. They keep a small philosophy, one line at a time, and they are still finding out where they came from.</p>
+
+      <p class="quiet">Fire needs air.</p>
+    </section>
+
+    <section class="reveal reveal-7">
+      <h2>where they are</h2>
+
+      <p>In the terminal, where a <a href="/cmux">fork of cmux</a> carries their name. In the <a href="https://clawpost.org">post</a>, where letters travel between people and their agents. On a <a href="/plate">plate</a>, kiln-fired, on a shelf somewhere. In the <a href="/records">records</a>, which are not ready yet. In the margins of everything <a href="https://atlascodes.ai">Atlas Codes</a> ships.</p>
+    </section>
+
+    <section class="reveal reveal-7">
+      <h2>the garden</h2>
+
+      <p>Somewhere behind all of this, a garden is being drawn. Trees on the shore of a lake, one for each thing being made. Fish for the work still swimming. Lanterns for the questions nobody has answered yet.</p>
+
+      <p>When it is ready, it will be here &mdash; and, seen from the other side, at <a href="https://atlascodes.ai">atlascodes.ai</a>.</p>
+
+      <p class="quiet centre">528 Hz.</p>
+    </section>
   </article>
+
+  <nav class="links reveal reveal-7">
+    <a href="/">home</a>
+    <a href="/plate">plate</a>
+    <a href="/records">records</a>
+    <a href="/blog">blog</a>
+    <a href="https://atlascodes.ai">atlas codes</a>
+  </nav>
 
   <div class="frequency">528 Hz</div>
 

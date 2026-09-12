@@ -10,5 +10,5 @@ Static site for Mochi. Hosted on GitHub Pages.
 - `/plate` — Mochi plate product
 - `/records` — Mochi records
 - `/story` — Story page
-- `/cats` — Ina & Doug (linked from /story)
+- `/archive/cats` — Ina & Doug (archived; not linked from the nav)
 - `/yolo` — claude --yolo (served from the separate [mochiexists/yolo](https://github.com/mochiexists/yolo) repo)
