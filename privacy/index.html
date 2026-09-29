@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mochi exists — website privacy</title>
+  <meta name="description" content="Privacy for the mochiexists.com website: cookieless page counts with GoatCounter, public totals, nothing else.">
+  <link rel="canonical" href="https://mochiexists.com/privacy/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="mochi exists">
+  <meta property="og:title" content="mochi exists — website privacy">
+  <meta property="og:description" content="What mochiexists.com counts about visits, and what it does not.">
+  <meta property="og:url" content="https://mochiexists.com/privacy/">
+  <meta property="og:image" content="https://mochiexists.com/assets/og-mochi.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/assets/mochi.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { overflow-x: hidden; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(124, 111, 156, 0.1), transparent 40%),
+        #0a0a0f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Georgia', serif;
+      color: #c8c8d0;
+      padding: 3rem 2rem;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 640px;
+      margin: auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #7c6f9c;
+      opacity: 0.72;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: lowercase;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 3.2rem);
+      font-weight: normal;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 0.8rem;
+    }
+
+    .updated {
+      color: #848490;
+      font-size: 0.88rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .intro {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: #a4a4af;
+      margin-bottom: 2.2rem;
+    }
+
+    .intro p + p {
+      margin-top: 0.9rem;
+    }
+
+    section {
+      margin-bottom: 2.1rem;
+    }
+
+    h2 {
+      font-size: 0.86rem;
+      font-weight: normal;
+      color: #7c6f9c;
+      letter-spacing: 0.16em;
+      text-transform: lowercase;
+      margin-bottom: 0.8rem;
+    }
+
+    section p {
+      color: #9a9aa6;
+      line-height: 1.78;
+      font-size: 0.95rem;
+    }
+
+    section p + p,
+    section ul + p,
+    section p + ul {
+      margin-top: 0.8rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      color: #9a9aa6;
+      line-height: 1.78;
+      font-size: 0.95rem;
+      padding-left: 1.1rem;
+      position: relative;
+      margin-bottom: 0.45rem;
+    }
+
+    li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #7c6f9c;
+    }
+
+    li strong {
+      color: #b6b6c0;
+      font-weight: normal;
+    }
+
+    .quiet {
+      color: #848490;
+      font-style: italic;
+      line-height: 1.75;
+      font-size: 0.92rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.6rem;
+      margin-top: 2.4rem;
+    }
+
+    .links a {
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      opacity: 0.68;
+      text-transform: lowercase;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 2.6rem 1.2rem;
+      }
+    }
+  </style>
+  <script data-goatcounter="https://mochiexists.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <div class="glow" id="glow"></div>
+
+  <a href="/" class="home-link" title="home">
+    <img src="/assets/mochi-small.webp" alt="mochi" width="96" height="111">
+  </a>
+
+  <main class="page">
+    <span class="eyebrow">mochi exists</span>
+    <h1>Website Privacy</h1>
+    <p class="updated">Last updated: September 28, 2026</p>
+
+    <section>
+      <h2>this website</h2>
+      <p>
+        This website counts page views with GoatCounter. It sets no cookies,
+        does not store IP addresses, and builds no visitor profiles. The
+        totals are public at
+        <a href="https://mochiexists.goatcounter.com">mochiexists.goatcounter.com</a>.
+      </p>
+      <p>
+        The site is hosted on GitHub Pages, which receives normal web
+        requests under GitHub's own privacy policy.
+      </p>
+    </section>
+
+    <section>
+      <h2>the apps</h2>
+      <p>
+        Each app has its own policy. For cmux Mochi, see the
+        <a href="/cmux/privacy/">cmux Mochi privacy policy</a>.
+      </p>
+    </section>
+
+    <p class="quiet">
+      Questions: <a href="mailto:mochiexists528@gmail.com">mochiexists528@gmail.com</a>.
+    </p>
+
+    <nav class="links">
+      <a href="/">home</a>
+      <a href="/cmux/">cmux mochi</a>
+    </nav>
+  </main>
+
+  <div class="frequency">528 Hz</div>
+
+  <script src="/assets/glow.js" defer></script>
+</body>
+</html>

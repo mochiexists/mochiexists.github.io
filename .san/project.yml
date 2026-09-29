@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: mochi-site
+name: mochi site
+kind: webApplication
+summary: "the mochiexists.com studio site: blog, cmux, records and story pages."
+capabilities: []
+platforms: []
+repository:
+  canonicalRemotes:
+    - git@github-mochiexists:mochiexists/mochiexists.github.io.git
+integrations:
+  copy: []
+  analytics:
+    provider: goatcounter
+    domain: mochiexists.com
+    searchConsoleProperty: sc-domain:mochiexists.com
+    siteId: mochiexists
+    publicDashboard: https://mochiexists.goatcounter.com
+    searchConsole: pending
