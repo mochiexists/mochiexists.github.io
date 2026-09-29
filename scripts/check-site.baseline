@@ -1,0 +1,3 @@
+# Pre-existing check-site.py failures on main (2026-09-29), ignored until fixed.
+# One entry per line: a failure as printed (without "FAIL ") or a bare page path.
+index.html: broken link -> /yolo  # served by the separate mochiexists/yolo repo (project pages)
